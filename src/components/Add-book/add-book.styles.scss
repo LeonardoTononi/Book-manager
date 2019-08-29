@@ -1,0 +1,57 @@
+.form-container {
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 750px;
+
+  h2 {
+    font-weight: 400;
+    text-align: start;
+    padding-left: 10px;
+    border-bottom: 2px solid #48484838;
+    width: 130px;
+  }
+
+  .row {
+    padding: 10px;
+    display: grid;
+
+    label {
+      font-size: 1.2rem;
+      padding-bottom: 10px;
+    }
+
+    input {
+      width: 50%;
+      padding: 2px;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    textarea {
+      width: 50%;
+      outline: none;
+      padding: 3px;
+      border: 1px solid #48484838;
+      font-size: 1rem;
+    }
+
+    .button-submit {
+      width: 15%;
+      padding: 7px 5px;
+      background-color: black;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: top left 100ms ease-in-out;
+
+      &:hover {
+        position: relative;
+        top: -5px;
+        left: -5px;
+        box-shadow: 5px 5px 0px 0 #484848;
+      }
+    }
+  }
+}
