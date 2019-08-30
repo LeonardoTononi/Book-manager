@@ -1,25 +1,24 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+
 import './App.css';
 
-import Navbar from './components/Navbar/navbar.component'
+import Homepage from './pages/Homepage/homepage.component'
 import AddBook from './components/Add-book/add-book.component'
-import BooksList from './components/Books-list/books-list.component'
+import BooksLibrary from './pages/Books-library/books-library.component'
+import Navbar from './components/Navbar/navbar.component'
 
-class App extends Component  {
-  state = {
-    books: [
-      { title: 'Harry Potter', author: 'JK Rowling', note: 'I love it', id: 1 },
-      { title: 'The lord of the rings', author: 'J.R.R Tolkien', note: 'The bestseller of the century!', id: 2 },
-      { title: 'Minimalism', author: 'Jon Doe', note: 'Less is better', id: 3 },
-    ] 
-  }
+class App extends Component  {  
+  constructor(props) {
+    super(props);
 
-  addBook = (book) => {
-    book.id = Math.random();
-    let books = [...this.state.books, book];
-    this.setState({
-      books
-    })
+    this.state = {
+      books: [
+        { title: 'Harry Potter', author: 'JK Rowling', note: 'I love it', id: 1 },
+        { title: 'The lord of the rings', author: 'J.R.R Tolkien', note: 'The bestseller of the century!', id: 2 },
+        { title: 'Minimalism', author: 'Jon Doe', note: 'Less is better', id: 3 },
+      ]
+    }
   }
 
   deleteBook = (id) => {
@@ -31,13 +30,24 @@ class App extends Component  {
     })
   }
 
+  addBook = (book) => {
+    book.id = Math.random();
+    let books = [...this.state.books, book];
+    this.setState({
+      books
+    })
+  }
+
   render() {
     return (
-      <div className="container">
-        <Navbar></Navbar>
-        <AddBook addBook={this.addBook}/>
-        <BooksList deleteBook={this.deleteBook} books={this.state.books} />
-      </div>
+     <BrowserRouter>
+       <div className="container">
+          <Navbar />
+          <Route exact path='/' render={() => <Homepage addBook={this.addBook} />}  />
+          <Route path='/add-new-book' render={() => <AddBook addBook={this.addBook} />}  />
+          <Route path='/books-list' render={() => <BooksLibrary books={this.state.books} deleteBook={this.deleteBook} />} />
+       </div>
+     </BrowserRouter>
     );
   }
   
