@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 
 import './add-book.styles.scss'
 
+import Button from '../Button/button.component'
+
 class AddBook extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       title: null,
       author: null,
-      note: null
+      note: null,
+      submitted: false
     }
   }
 
@@ -22,6 +25,14 @@ class AddBook extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.addBook(this.state);
+    this.setState({
+      submitted: true
+    })
+    setTimeout(() => {
+      this.setState({
+        submitted: false
+      })
+   }, 2000)
     e.target.reset();
   }
 
@@ -29,6 +40,13 @@ class AddBook extends Component {
     return (
       <div className="form-container">
         <h2>Add Book</h2>
+        {
+          (this.state.submitted === true) ?
+          (<div className="success-message">
+          <p>Book added to the list!</p>
+          </div>)
+            : (null)
+        }
         <form onSubmit={this.handleSubmit}>
           <div className="row">
             <label htmlFor="title">Title</label>
@@ -43,7 +61,7 @@ class AddBook extends Component {
             <textarea id="note" cols="30" rows="1" onChange={this.handleChange}></textarea>
           </div>
           <div className="row">
-            <button type="submit" className="button-submit">Submit</button>
+            <Button props="Submit"/>
           </div>
         </form>
       </div>

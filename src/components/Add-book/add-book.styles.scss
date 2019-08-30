@@ -2,14 +2,13 @@
   padding: 20px;
   margin: 0 auto;
   width: 100%;
-  max-width: 750px;
+  max-width: 600px;
 
   h2 {
     font-weight: 400;
     text-align: start;
     padding-left: 10px;
-    border-bottom: 2px solid #48484838;
-    width: 130px;
+    text-align: start;
   }
 
   .row {
@@ -22,36 +21,31 @@
     }
 
     input {
-      width: 50%;
       padding: 2px;
       outline: none;
       font-size: 1rem;
     }
 
     textarea {
-      width: 50%;
       outline: none;
       padding: 3px;
       border: 1px solid #48484838;
       font-size: 1rem;
     }
+  }
 
-    .button-submit {
-      width: 15%;
-      padding: 7px 5px;
-      background-color: black;
+  .success-message {
+    padding: 7px 5px;
+    margin-top: 10px;
+    text-align: center;
+    background: #3ba73b;
+    width: 96%;
+    margin: 15px auto;
+
+    p {
+      margin: 0;
+      padding: 0;
       color: white;
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: top left 100ms ease-in-out;
-
-      &:hover {
-        position: relative;
-        top: -5px;
-        left: -5px;
-        box-shadow: 5px 5px 0px 0 #484848;
-      }
     }
   }
 }
