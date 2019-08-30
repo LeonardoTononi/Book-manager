@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 30px 5%;
-  background: #484848;
+  background: black;
   color: white;
 
   .logo {
@@ -21,7 +21,7 @@
     color: white;
     font-size: 1.2rem;
     display: flex;
-    align-items: end;
+    align-items: flex-end;
 
     li {
       list-style: none;
@@ -30,8 +30,22 @@
       transition: background 200ms ease-in;
 
       &:hover {
-        background: #383737;
+        background: white;
+        color: black;
+
+        a {
+          color: black;
+        }
       }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+
+    .logout {
+      display: none;
     }
   }
 }
