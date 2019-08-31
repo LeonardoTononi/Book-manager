@@ -7,6 +7,7 @@ import Homepage from './pages/Homepage/homepage.component'
 import AddBook from './components/Add-book/add-book.component'
 import BooksLibrary from './pages/Books-library/books-library.component'
 import Navbar from './components/Navbar/navbar.component'
+import SignInAndSignUp from './pages/Sign-in-and-sign-up/sign-in-and-sign-up.component';
 
 class App extends Component  {  
   constructor(props) {
@@ -46,6 +47,7 @@ class App extends Component  {
           <Route exact path='/' render={() => <Homepage addBook={this.addBook} />}  />
           <Route path='/add-new-book' render={() => <AddBook addBook={this.addBook} />}  />
           <Route path='/books-list' render={() => <BooksLibrary books={this.state.books} deleteBook={this.deleteBook} />} />
+          <Route path='/signIn-and-signUp' render={()=> <SignInAndSignUp />} />
        </div>
      </BrowserRouter>
     );
