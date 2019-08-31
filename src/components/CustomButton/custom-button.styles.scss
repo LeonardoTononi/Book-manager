@@ -1,0 +1,33 @@
+.custom-button {
+  padding: 7px 5px;
+  margin-top: 10px;
+  background: white;
+  color: black;
+  border: 1px solid black;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  outline: none;
+
+  &:hover {
+    background: black;
+    color: white;
+  }
+}
+
+.google-sign-in {
+  padding: 7px 5px;
+  margin-top: 10px;
+  background: white;
+  color: #2962ff;
+  border: 1px solid #2962ff;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  outline: none;
+
+  &:hover {
+    background: #2962ff;
+    color: white;
+  }
+}

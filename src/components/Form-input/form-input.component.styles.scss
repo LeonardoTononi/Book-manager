@@ -1,0 +1,21 @@
+.row {
+  padding: 10px 0;
+  display: grid;
+  label {
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+  }
+
+  input {
+    padding: 2px;
+    outline: none;
+    font-size: 1rem;
+  }
+
+  textarea {
+    outline: none;
+    padding: 3px;
+    border: 1px solid #48484838;
+    font-size: 1rem;
+  }
+}

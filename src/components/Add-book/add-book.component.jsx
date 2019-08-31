@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import './add-book.styles.scss'
 
-import Button from '../Button/button.component'
+import FormInput from '../Form-input/form-input.component'
+import CustomButton from '../CustomButton/custom-button.component'
 
 class AddBook extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class AddBook extends Component {
   render() {
     return (
       <div className="form-container">
-        <h2>Add Book</h2>
+        <h2>Add a new book</h2>
         {
           (this.state.submitted === true) ?
           (<div className="success-message">
@@ -48,20 +49,30 @@ class AddBook extends Component {
             : (null)
         }
         <form onSubmit={this.handleSubmit}>
+          <FormInput
+            label="Title"
+            id="title"
+            name="title"
+            type="title"
+            handleChange={this.handleChange}
+            required />
+          <FormInput
+            label="Author"
+            id="author"
+            name="author"
+            type="author"
+            handleChange={this.handleChange}
+            required />
+          <FormInput
+            label="Notes about the book"
+            id="note"
+            name="note"
+            type="text"
+            handleChange={this.handleChange}
+            isTextArea
+          />
           <div className="row">
-            <label htmlFor="title">Title</label>
-            <input type="text" id="title" onChange={this.handleChange} />
-          </div>
-          <div className="row">
-            <label htmlFor="author">Author</label>
-            <input type="text" id="author" onChange={this.handleChange} />
-          </div>
-          <div className="row">
-            <label htmlFor="note">Note about the book</label>
-            <textarea id="note" cols="30" rows="1" onChange={this.handleChange}></textarea>
-          </div>
-          <div className="row">
-            <Button props="Submit"/>
+            <CustomButton>Add book</CustomButton>
           </div>
         </form>
       </div>

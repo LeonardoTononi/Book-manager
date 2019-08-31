@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import './sign-up.styles.scss'
 
-import Button from '../Button/button.component'
+import FormInput from '../Form-input/form-input.component'
+import CustomButton from '../CustomButton/custom-button.component'
 
 class SignUp extends Component  {
   constructor() {
@@ -15,20 +16,52 @@ class SignUp extends Component  {
       confirmPassword: ''
     }
   }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+  }
+
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value
+    })
+  }
+
   render() {
     return (
       <div className="sign-up">
         <h1>Register</h1>
-        <form>
-          <label htmlFor="username">Username</label>
-          <input type="text" id="username" name="username"/>
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" />
-          <label htmlFor="password">Password</label>
-          <input type="password" id="password" name="password"/>
-          <label htmlFor="confirmPassword">Confirm password</label>
-          <input type="password" id="confirmPassword" name="confirmPassword"/>
-          <Button props="Register" />
+        <form onSubmit={this.handleSubmit}>
+          <FormInput
+            label="Username"
+            type="username"
+            name="username"
+            handleChange={this.handleChange}
+            required
+          />
+          <FormInput
+            label="Email"
+            type="email"
+            name="email"
+            handleChange={this.handleChange}
+            required
+          />
+          <FormInput
+            label="Password"
+            type="password"
+            name="password"
+            handleChange={this.handleChange}
+            required
+          />
+          <FormInput
+            label="Confirm password"
+            type="password"
+            name="confirmPassword"
+            handleChange={this.handleChange}
+            required
+          />
+          <CustomButton>Register</CustomButton>
         </form>
       </div>
     )

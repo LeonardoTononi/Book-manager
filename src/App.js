@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { auth } from './firebase/firebase.utils'
 
 import './App.css';
 
@@ -14,12 +15,26 @@ class App extends Component  {
     super(props);
 
     this.state = {
+      currentUser: null,
       books: [
         { title: 'Harry Potter', author: 'JK Rowling', note: 'I love it', id: 1 },
         { title: 'The lord of the rings', author: 'J.R.R Tolkien', note: 'The bestseller of the century!', id: 2 },
         { title: 'Minimalism', author: 'Jon Doe', note: 'Less is better', id: 3 },
       ]
     }
+  }
+
+  unsuscribeFromAuth = null;
+
+  componentDidMount() {
+  this.unsuscribeFromAuth = auth.onAuthStateChanged(user => {
+      this.setState({ currentUser: user });
+      console.log(user)
+    })
+  }
+
+  componentWillUnmount() {
+    this.unsuscribeFromAuth();
   }
 
   deleteBook = (id) => {
@@ -43,11 +58,11 @@ class App extends Component  {
     return (
      <BrowserRouter>
        <div className="container">
-          <Navbar />
-          <Route exact path='/' render={() => <Homepage addBook={this.addBook} />}  />
-          <Route path='/add-new-book' render={() => <AddBook addBook={this.addBook} />}  />
-          <Route path='/books-list' render={() => <BooksLibrary books={this.state.books} deleteBook={this.deleteBook} />} />
-          <Route path='/signIn-and-signUp' render={()=> <SignInAndSignUp />} />
+          <Navbar currentUser={this.state.currentUser} />
+          <Route exact path='/' render={() => <Homepage addBook={this.addBook} />} />
+                <Route path='/add-new-book' render={() => <AddBook addBook={this.addBook} />} />
+                <Route path='/books-list' render={() => <BooksLibrary books={this.state.books} deleteBook={this.deleteBook} />} />
+                <Route path='/signIn-and-signUp' render={() => <SignInAndSignUp />} />
        </div>
      </BrowserRouter>
     );
