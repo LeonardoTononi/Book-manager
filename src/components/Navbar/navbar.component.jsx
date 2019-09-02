@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebase.utils'
 
 import './navbar.styles.scss';
 
 const Navbar = ({ currentUser }) => {
+
   return (
     <div className="container-nav">
       <h1 className="logo">Book Manager</h1>
@@ -13,7 +14,9 @@ const Navbar = ({ currentUser }) => {
         <li><Link to="/books-list">Book List</Link></li>
         {
           currentUser ? 
-            <li className="logout"><Link>Logout</Link></li>
+            <li className="logout" onClick={() => {
+              auth.signOut();
+            }}><Link to="/signIn-and-signUp">Logout</Link></li>
             :
             <div className="log-div">
               <li className="login-register"><Link to="/signIn-and-signUp">Login / Register</Link></li>
