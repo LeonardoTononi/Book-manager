@@ -3,6 +3,6 @@ You can register and then login to the application, store your books and add som
 The informations about books are retrived with the google books api.
 
 ### What I learned?
-• React.js
-• Firebase auth (register/login).
+• React.js <br>
+• Firebase auth (register/login). <br>
 • Firestore to save users and the relative books.
