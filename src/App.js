@@ -69,14 +69,15 @@ class App extends Component  {
   }
 
   render() {
+    const { currentUser } = this.state;
     return (
      <BrowserRouter>
        <div className="container">
-          <Navbar currentUser={this.state.currentUser} />
-          <Route exact path='/' render={() => <Homepage addBook={this.addBook} currentUser={this.state.currentUser}/>} />
-                <Route path='/add-new-book' render={() => <AddBook addBook={this.addBook} />} />
-                <Route path='/books-list' render={() => <BooksLibrary books={this.state.books} deleteBook={this.deleteBook} />} />
-                <Route path='/signIn-and-signUp' render={() => <SignInAndSignUp />} />
+          <Navbar currentUser={currentUser} />
+          <Route exact path='/' render={() => <Homepage addBook={this.addBook} currentUser={currentUser}/>} />
+          <Route path='/add-new-book' render={() => <AddBook addBook={this.addBook} />} />
+          <Route path='/books-list' render={() => <BooksLibrary books={this.state.books} deleteBook={this.deleteBook} currentUser={currentUser} />} />
+          <Route path='/signIn-and-signUp' render={() => <SignInAndSignUp />} />
        </div>
      </BrowserRouter>
     );
