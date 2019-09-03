@@ -2,9 +2,10 @@
   "name": "book-manager",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://easaaa.github.io/Book-manager/",
   "dependencies": {
-    "eslint": "^6.3.0",
     "firebase": "^6.5.0",
+    "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -15,7 +16,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,5 +34,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^6.3.0"
   }
 }
