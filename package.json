@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://easaaa.github.io/Book-manager/",
   "dependencies": {
+    "eslint-utils": "^1.4.2",
     "firebase": "^6.5.0",
     "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0",
