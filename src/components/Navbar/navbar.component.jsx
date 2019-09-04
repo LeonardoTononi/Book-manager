@@ -5,7 +5,6 @@ import { auth } from '../../firebase/firebase.utils'
 import './navbar.styles.scss';
 
 const Navbar = ({ currentUser }) => {
-
   return (
     <div className="container-nav">
       <h1 className="logo">Book Manager</h1>

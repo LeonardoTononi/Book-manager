@@ -1,11 +1,18 @@
 .homepage {
-  padding: 20px;
+  padding: 42px;
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 
   .welcome-title {
     font-size: 1.5rem;
     font-weight: 400;
     text-align: center;
+  }
+
+  .log-button {
+    width: 235px;
   }
 
   .actions {

@@ -8,14 +8,17 @@ import './homepage.styles.scss'
 const Homepage = ({ addBook, currentUser }) => {
   return (
     <div className="homepage">
-      <h1 className="welcome-title">
+      <div>
         {
           currentUser ?
-            (`Welcome ${currentUser.displayName},`)
+            <h1 className="welcome-title">{`Welcome ${currentUser.displayName},`}</h1>
             :
-            (`You need to login or register before!`)
+            <div>
+              <h1 className="welcome-title">{`You need to login or register before!`}</h1>
+              <Link to="/signIn-and-signUp"> <CustomButton  className="log-button custom-button">Login / Register</CustomButton> </Link>
+            </div>
         }
-        </h1>
+       </div>
       {
         currentUser ?
           <div>
@@ -29,7 +32,6 @@ const Homepage = ({ addBook, currentUser }) => {
           :
           null
       }
-      
     </div>
   )
 }

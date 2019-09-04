@@ -26,9 +26,7 @@ class SignIn extends Component {
       await auth.signInWithEmailAndPassword(email, password);
       this.setState({ email: '', password: '' })
 
-      setTimeout(() => {
-        this.props.history.push('/');
-      }, 500);
+      this.props.history.push('/');
 
     } catch (error) {
       console.log(error);
@@ -61,7 +59,7 @@ class SignIn extends Component {
             handleChange={this.handleChange}
             required />
           <CustomButton type="submit">Login</CustomButton>
-          <CustomButton onClick={signInWithGoogle} isGoogleSignIn>Sign in with Google</CustomButton>
+          <CustomButton onClick={()=> signInWithGoogle(this.props.history)} isGoogleSignIn>Sign in with Google</CustomButton>
         </form>
       </div>
     ) 
