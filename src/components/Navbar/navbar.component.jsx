@@ -1,29 +1,54 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebase.utils'
 
 import './navbar.styles.scss';
 
-const Navbar = ({ currentUser }) => {
-  return (
-    <div className="container-nav">
-      <h1 className="logo">Book Manager</h1>
-      <ul className="navbar">
-        <li><Link to="/">Dashboard</Link></li>
-        <li><Link to="/my-books">My Books</Link></li>
+class Navbar extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      isVisible: false
+    }
+  }
+
+  hideShowClick = () => {
+    this.setState({ isVisible: !this.state.isVisible })
+  }
+
+  render() {
+    return (
+      <div className="container-nav">
+        <h1 className="logo">Book Manager</h1>
+      
         {
-          currentUser ? 
-            <li className="logout" onClick={() => {
-              auth.signOut();
-            }}><Link to="/signIn-and-signUp">Logout</Link></li>
-            :
+          this.props.currentUser ?
+            this.state.isVisible ?
+              <div>
+                 <ul className="navbar">
+                  <li><Link to="/">Dashboard</Link></li><li><Link to="/my-books">My Books</Link></li>
+                  <li className="logout" onClick={() => auth.signOut()}>
+                    <Link to="/signIn-and-signUp">Logout</Link>
+                  </li>
+                  <li className="hamburger" onClick={this.hideShowClick}><i className="fas fa-bars"></i></li>
+              </ul>
+              </div>
+              :
+            <div className="hamburger" onClick={this.hideShowClick}>
+              <i className="fas fa-bars"></i>
+            </div>
+            : 
             <div className="log-div">
-              <li className="login-register"><Link to="/signIn-and-signUp">Login / Register</Link></li>
-            </div>    
+                <p className="login-register"><Link to="/signIn-and-signUp">Login / Register</Link></p>
+            </div>
         }
-      </ul>
-    </div>
-  )
+
+        
+      </div>
+    )
+  }
 }
 
 export default Navbar
+

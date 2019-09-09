@@ -18,15 +18,15 @@
   }
 
   .navbar {
+    display: flex;
     margin: 0;
     color: white;
     font-size: 1.2rem;
-    display: flex;
     align-items: flex-end;
 
     li {
       list-style: none;
-      padding: 10px 15px;
+      padding: 13px 15px;
       cursor: pointer;
       transition: background 200ms ease-in;
 
@@ -48,5 +48,36 @@
 
   .log-div {
     display: inherit;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 200ms ease-in;
+
+    &:hover {
+      background: white;
+      color: black;
+
+      a {
+        color: black;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+  .hamburger {
+    background: white;
+    padding: 13px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 10px;
+
+    i {
+      color: black;
+      font-size: 1.5rem;
+    }
   }
 }

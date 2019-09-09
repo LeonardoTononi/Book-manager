@@ -28,7 +28,7 @@ const Dashboard = ({ addBook, currentUser }) => {
               <p className="actions">What do you want to do?</p>
               <div className="buttons-container">
                 <Link to="/add-new-book"><CustomButton>Add a new book</CustomButton></Link>
-                <Link to="/books-list"><CustomButton>My Books</CustomButton></Link>
+                <Link to="/my-books"><CustomButton>My Books</CustomButton></Link>
                 <CustomButton>My profile</CustomButton>
               </div>
             </div>
