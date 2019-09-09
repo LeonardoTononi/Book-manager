@@ -1,0 +1,49 @@
+.book-details {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+
+  h1 {
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .amazon-btn {
+    max-width: 120px;
+    margin: 40px auto;
+
+    button {
+      background: #ffd05a;
+      border-radius: 4px;
+
+      &:hover {
+        background: #f0c14b;
+        color: black;
+      }
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+    place-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+
+    img {
+      width: 150px;
+    }
+
+    .details {
+      display: grid;
+      place-items: start;
+
+      h2 {
+        font-weight: 400;
+      }
+    }
+  }
+}

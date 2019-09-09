@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 
 import './App.css';
 
-import Homepage from './pages/Homepage/homepage.component'
+import Dashboard from './pages/Dashboard/dashboard.component'
 import AddBook from './components/Add-book/add-book.component'
 import BooksLibrary from './pages/Books-library/books-library.component'
 import Navbar from './components/Navbar/navbar.component'
 import SignInAndSignUp from './pages/Sign-in-and-sign-up/sign-in-and-sign-up.component';
+import BookDetails from './components/Book-details/book-details.component'
 
 class App extends Component  {  
   constructor(props) {
@@ -17,7 +18,7 @@ class App extends Component  {
     this.state = {
       currentUser: null,
       books: [
-        { title: 'Harry Potter', author: 'JK Rowling', note: 'I love it', id: 1 },
+        { title: 'Harry Potter and the Cursed Child', author: 'JK Rowling', note: 'I love it', id: 1 },
         { title: 'The lord of the rings', author: 'J.R.R Tolkien', note: 'The bestseller of the century!', id: 2 },
         { title: 'Minimalism', author: 'Jon Doe', note: 'Less is better', id: 3 },
       ]
@@ -74,10 +75,13 @@ class App extends Component  {
      <BrowserRouter>
        <div className="container">
           <Navbar currentUser={currentUser} />
-          <Route exact path='/' render={() => <Homepage addBook={this.addBook} currentUser={currentUser}/>} />
-          <Route path='/add-new-book' render={() => <AddBook addBook={this.addBook} />} />
-          <Route path='/books-list' render={() => <BooksLibrary books={this.state.books} deleteBook={this.deleteBook} currentUser={currentUser} />} />
-          <Route path='/signIn-and-signUp' render={() => <SignInAndSignUp />} />
+          <Switch>
+            <Route exact path='/' render={() => <Dashboard addBook={this.addBook} currentUser={currentUser} />} />
+            <Route path='/add-new-book' render={() => <AddBook addBook={this.addBook} />} />
+            <Route exact path='/my-books' render={() => <BooksLibrary books={this.state.books} deleteBook={this.deleteBook} currentUser={currentUser} />} />
+            <Route path='/my-books/:id' render={(routerProps) => <BookDetails books={this.state.books} {...routerProps}/>}/>
+            <Route path='/signIn-and-signUp' render={() => <SignInAndSignUp />} />
+          </Switch>
        </div>
      </BrowserRouter>
     );

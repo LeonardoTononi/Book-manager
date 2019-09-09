@@ -1,0 +1,43 @@
+.dashboard {
+  padding: 42px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dashboard .dashboard-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 3fr 1fr;
+  place-content: center;
+  place-items: center;
+}
+
+.dashboard .actions-container {
+  border-top: 1px solid #80808030;
+  border-bottom: 1px solid #80808030;
+  max-width: 400px;
+  padding: 30px;
+  height: 313.16px;
+  width: 314px;
+}
+
+.dashboard .welcome-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.dashboard .log-button {
+  width: 235px;
+}
+
+.dashboard .actions {
+  text-align: center;
+}
+
+.dashboard .buttons-container {
+  margin: 0 auto;
+}
+/*# sourceMappingURL=dashboard.styles.css.map */

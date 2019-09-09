@@ -1,0 +1,67 @@
+.container-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px 5%;
+  background: black;
+  color: white;
+  -webkit-box-shadow: 0 0 10px 2px #808080d4;
+          box-shadow: 0 0 10px 2px #808080d4;
+}
+
+.container-nav .logo {
+  cursor: pointer;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+}
+
+.container-nav .navbar {
+  margin: 0;
+  color: white;
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.container-nav .navbar li {
+  list-style: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  -webkit-transition: background 200ms ease-in;
+  transition: background 200ms ease-in;
+}
+
+.container-nav .navbar li:hover {
+  background: white;
+  color: black;
+}
+
+.container-nav .navbar li:hover a {
+  color: black;
+}
+
+.container-nav .navbar li a {
+  text-decoration: none;
+  color: white;
+}
+
+.container-nav .log-div {
+  display: inherit;
+}
+/*# sourceMappingURL=navbar.styles.css.map */

@@ -1,0 +1,30 @@
+.reading-challenge {
+  padding: 30px;
+  max-width: 400px;
+  margin: 0 auto;
+  border-top: 1px solid #80808030;
+  border-bottom: 1px solid #80808030;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  input {
+    width: 60px;
+    text-align: center;
+  }
+
+  button {
+    width: 120px;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+  }
+}

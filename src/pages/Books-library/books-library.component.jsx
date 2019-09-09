@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import './books-library.styles.scss'
 
-import BooksList from '../../components/Books-list/books-list.component'
+import MyBooks from '../../components/My-books/my-books.component'
 import CustomButton from '../../components/CustomButton/custom-button.component'
 
 const BooksLibrary = ({ books, deleteBook, currentUser }) => {
@@ -15,7 +15,7 @@ const BooksLibrary = ({ books, deleteBook, currentUser }) => {
     <div className="books-library">
       {
         currentUser ? 
-          <BooksList books={books} deleteBook={deleteBook} /> 
+          <MyBooks books={books} deleteBook={deleteBook} /> 
           : 
           <div className="list-container">
             <h2 style={pStyle}>You need to login or register before!</h2>

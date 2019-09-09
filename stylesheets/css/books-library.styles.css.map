@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,cAAc,CAAC;EACb,OAAO,EAAE,IAAI;EACb,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,MAAM;EACjB,MAAM,EAAE,MAAM;EACd,UAAU,EAAE,MAAM;CAKnB;;AAVD,AAOE,cAPY,CAOZ,WAAW,CAAC;EACV,KAAK,EAAE,KAAK;CACb",
+    "sources": [
+        "../../src/pages/Books-library/books-library.styles.scss"
+    ],
+    "names": [],
+    "file": "books-library.styles.css"
+}

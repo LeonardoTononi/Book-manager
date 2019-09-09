@@ -1,0 +1,15 @@
+.sign-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 30px;
+  grid-gap: 100px;
+}
+
+.sign-container h1 {
+  font-weight: 400;
+}
+/*# sourceMappingURL=sign-in-and-sign-up.styles.css.map */

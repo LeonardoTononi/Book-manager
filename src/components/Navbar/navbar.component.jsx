@@ -9,8 +9,8 @@ const Navbar = ({ currentUser }) => {
     <div className="container-nav">
       <h1 className="logo">Book Manager</h1>
       <ul className="navbar">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/books-list">Book List</Link></li>
+        <li><Link to="/">Dashboard</Link></li>
+        <li><Link to="/my-books">My Books</Link></li>
         {
           currentUser ? 
             <li className="logout" onClick={() => {

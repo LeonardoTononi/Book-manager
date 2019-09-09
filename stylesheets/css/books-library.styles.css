@@ -4,8 +4,9 @@
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
-
-  .log-button {
-    width: 235px;
-  }
 }
+
+.books-library .log-button {
+  width: 235px;
+}
+/*# sourceMappingURL=books-library.styles.css.map */

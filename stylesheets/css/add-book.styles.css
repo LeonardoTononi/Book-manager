@@ -1,0 +1,53 @@
+.form-container {
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+.form-container h2 {
+  font-weight: 400;
+  text-align: start;
+  padding-left: 10px;
+  text-align: start;
+}
+
+.form-container .row {
+  padding: 10px;
+  display: -ms-grid;
+  display: grid;
+}
+
+.form-container .row label {
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+}
+
+.form-container .row input {
+  padding: 2px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.form-container .row textarea {
+  outline: none;
+  padding: 3px;
+  border: 1px solid #48484838;
+  font-size: 1rem;
+}
+
+.form-container .success-message {
+  padding: 7px 5px;
+  margin-top: 10px;
+  text-align: center;
+  background: #3ba73b;
+  width: 96%;
+  margin: 15px auto;
+}
+
+.form-container .success-message p {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+/*# sourceMappingURL=add-book.styles.css.map */

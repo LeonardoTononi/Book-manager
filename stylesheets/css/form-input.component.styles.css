@@ -1,0 +1,24 @@
+.row {
+  padding: 10px 0;
+  display: -ms-grid;
+  display: grid;
+}
+
+.row label {
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+}
+
+.row input {
+  padding: 2px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.row textarea {
+  outline: none;
+  padding: 3px;
+  border: 1px solid #48484838;
+  font-size: 1rem;
+}
+/*# sourceMappingURL=form-input.component.styles.css.map */

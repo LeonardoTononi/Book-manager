@@ -1,19 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import './books-list.styles.scss'
+import './my-books.styles.scss'
 
-const BooksList = ({ books, deleteBook }) => {
+const MyBooks = ({ books, deleteBook }) => {
   
   const books_th = books.map(book => {
     return (
       <tr key={book.id}>
-        <th>{book.title}</th>
+        <th><Link to={`/my-books/${book.id}`}>{book.title}</Link></th>
         <th>{book.author}</th>
         <th>{book.note}</th>
-        <th>
+        <th>✭✭✭✭✭</th>
+        <th className="actions-row">
           <button onClick={() => {
             deleteConfirm(book.id)
-          }}>X</button>
+          }}><i className="far fa-trash-alt"></i></button>
+          <button><i className="far fa-edit"></i></button>
         </th>
       </tr>
     )
@@ -29,13 +32,14 @@ const BooksList = ({ books, deleteBook }) => {
 
     return (
       <div className="list-container" >
-        <h2>Book List</h2>
+        <h2>My Books</h2>
         <table>
           <tbody>
             <tr className="table-title">
               <th>Title</th>
               <th>Author</th>
               <th>Note</th>
+              <th>Rating</th>
             </tr>
             {books_th}
           </tbody>
@@ -44,4 +48,4 @@ const BooksList = ({ books, deleteBook }) => {
     )
   }
 
-export default BooksList
+export default MyBooks
