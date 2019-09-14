@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 import './book-details.style.scss'
 import HarryPotterBook from '../Reading-challenge/harrypotter.jpeg'
@@ -11,7 +12,10 @@ const BookDetails = ({books, ...routerProps}) => {
   
   const book = books.filter(book => book.id === id)
   return (
-      <div className="book-details">
+    <div className="book-details">
+      <Link to="/my-books">
+         <div className="close-window"><i className="fas fa-times"></i></div>
+      </Link>
         <h1>{book[0].title}</h1>
         <div className="grid">
           <div className="col">
