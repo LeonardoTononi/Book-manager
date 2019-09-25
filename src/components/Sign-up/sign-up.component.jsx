@@ -7,7 +7,7 @@ import FormInput from '../Form-input/form-input.component'
 import CustomButton from '../CustomButton/custom-button.component'
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
-class SignUp extends Component  {
+class SignUp extends Component {
   constructor() {
     super();
 
@@ -29,7 +29,7 @@ class SignUp extends Component  {
       return;
     }
 
-    try { 
+    try {
       const { user } = await auth.createUserWithEmailAndPassword(
         email,
         password
@@ -48,8 +48,8 @@ class SignUp extends Component  {
         this.props.history.push('/');
       }, 500);
 
-    } catch (error){
-        console.log(error)
+    } catch (error) {
+      console.log(error)
     }
   }
 
@@ -57,7 +57,7 @@ class SignUp extends Component  {
   handleChange = event => {
     const { name, value } = event.target;
 
-    this.setState({[name]: value});
+    this.setState({ [name]: value });
   }
 
   render() {

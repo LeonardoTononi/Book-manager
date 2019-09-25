@@ -20,6 +20,8 @@ class AddBook extends Component {
     }
   }
 
+
+
   handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value
@@ -30,17 +32,6 @@ class AddBook extends Component {
     e.preventDefault();
     this.props.addBook(this.state);
     e.target.reset();
-
-    /* this.props.addBook(this.state);
-    this.setState({
-      formIsSubmitted: true
-    })
-    setTimeout(() => {
-      this.setState({
-        formIsSubmitted: false
-      })
-    }, 2000)
-    e.target.reset(); */
   }
 
   render() {
@@ -69,13 +60,6 @@ class AddBook extends Component {
             type="text"
             handleChange={this.handleChange}
             required />
-          {/* <FormInput
-            label="State"
-            id="state"
-            name="state"
-            type="text"
-            handleChange={this.handleChange}
-            required /> */}
           <div className="row">
             <label>State</label>
             <select onChange={this.handleChange} id="state">

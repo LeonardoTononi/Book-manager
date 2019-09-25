@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { auth } from '../../firebase/firebase.utils'
+import { connect } from 'react-redux'
+import { signOut } from '../../store/actions/authActions'
 
 import './navbar.styles.scss';
 
@@ -18,18 +19,20 @@ class Navbar extends Component {
   }
 
   render() {
+    const { auth } = this.props;
+    console.log(this.props)
     return (
       <div className="container-nav">
         <Link to="/">
           <h1 className="logo">Book Manager</h1>
         </Link>
         {
-          this.props.currentUser ?
+          auth.uid ?
             this.state.isVisible ?
               <div>
                 <ul className="navbar">
                   <li><Link to="/">Dashboard</Link></li><li><Link to="/my-books">My Books</Link></li>
-                  <li className="logout" onClick={() => auth.signOut()}>
+                  <li className="logout" onClick={this.props.signOut}>
                     <Link to="/signIn-and-signUp">Logout</Link>
                   </li>
                   <li className="hamburger" onClick={this.hideShowClick}><i className="fas fa-bars"></i></li>
@@ -44,12 +47,22 @@ class Navbar extends Component {
               <p className="login-register"><Link to="/signIn-and-signUp">Login / Register</Link></p>
             </div>
         }
-
-
       </div>
     )
   }
 }
 
-export default Navbar
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
 

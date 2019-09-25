@@ -11,15 +11,14 @@ import './dashboard.styles.scss'
 class Dashboard extends Component {
 
   render() {
-    const { currentUser } = this.props;
-    const { books } = this.props.books;
-    // With books here i want add latest books started or finished in the dashboard forum ?
+    const { books } = this.props;
+    const { auth } = this.props
     return (
       <div className="dashboard">
         <div>
           {
-            currentUser ?
-              <h1 className="welcome-title">{`Welcome ${currentUser.displayName}`}</h1>
+            auth.uid ?
+              <h1 className="welcome-title">{`Welcome ${auth.displayName}`}</h1>
               :
               <div>
                 <h1 className="welcome-title">{`You need to login or register before!`}</h1>
@@ -28,7 +27,7 @@ class Dashboard extends Component {
           }
         </div>
         {
-          currentUser ?
+          auth.uid ?
             <div className="dashboard-container">
               <div className="actions-container">
                 <p className="actions">What do you want to do?</p>
@@ -54,7 +53,8 @@ class Dashboard extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    books: state.books.books
+    auth: state.firebase.auth,
+    books: state.books
   }
 }
 

@@ -1,20 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import './books-library.styles.scss'
 
 import MyBooks from '../../components/My-books/my-books.component'
 import CustomButton from '../../components/CustomButton/custom-button.component'
 
-const BooksLibrary = ({ books, deleteBook, currentUser }) => {
+const BooksLibrary = (props) => {
   const pStyle = {
     textAlign: 'center'
   }
+  const { auth } = props;
+  const { books } = props;
+  const { deleteBook } = props;
 
   return (
     <div className="books-library">
       {
-        currentUser ?
+        auth.uid ?
           <MyBooks books={books} deleteBook={deleteBook} />
           :
           <div className="list-container">
@@ -26,4 +30,11 @@ const BooksLibrary = ({ books, deleteBook, currentUser }) => {
   )
 }
 
-export default BooksLibrary
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth,
+    books: state.firestore.ordered.books || state.books.books
+  }
+}
+
+export default connect(mapStateToProps)(BooksLibrary)
