@@ -8,7 +8,6 @@ import './my-books.styles.scss'
 
 class MyBooks extends Component {
 
-
   render() {
     const { books } = this.props;
     const books_th = books.map(book => {

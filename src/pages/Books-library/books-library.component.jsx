@@ -1,31 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 import './books-library.styles.scss'
 
 import MyBooks from '../../components/My-books/my-books.component'
-import CustomButton from '../../components/CustomButton/custom-button.component'
 
 const BooksLibrary = (props) => {
-  const pStyle = {
-    textAlign: 'center'
-  }
-  const { auth } = props;
-  const { books } = props;
-  const { deleteBook } = props;
+
+  const { auth, books, deleteBook } = props;
+  if (!auth.uid) return <Redirect to="/signIn-and-signUp" />
 
   return (
     <div className="books-library">
-      {
-        auth.uid ?
-          <MyBooks books={books} deleteBook={deleteBook} />
-          :
-          <div className="list-container">
-            <h2 style={pStyle}>You need to login or register before!</h2>
-            <Link to="/signIn-and-signUp"> <CustomButton className="log-button custom-button">Login / Register</CustomButton> </Link>
-          </div>
-      }
+      <MyBooks books={books} deleteBook={deleteBook} />
     </div>
   )
 }

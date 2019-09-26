@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { addBook } from '../../store/actions/bookActions'
+import { Redirect } from 'react-router-dom'
 
 import './add-book.styles.scss'
 
@@ -34,7 +35,11 @@ class AddBook extends Component {
     e.target.reset();
   }
 
+
+
   render() {
+    const { auth } = this.props;
+    if (!auth.uid) return <Redirect to="/signIn-and-signUp" />
     return (
       <div className="form-container">
         <h2>Add a new book</h2>
@@ -95,10 +100,16 @@ class AddBook extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth
+  }
+}
+
 const mapDispatchToProps = (dispatch) => {
   return {
     addBook: (book) => dispatch(addBook(book))
   }
 }
 
-export default connect(null, mapDispatchToProps)(AddBook)
+export default connect(mapStateToProps, mapDispatchToProps)(AddBook)
