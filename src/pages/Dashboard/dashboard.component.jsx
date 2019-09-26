@@ -20,10 +20,6 @@ class Dashboard extends Component {
       <div className="dashboard">
         <div>
           <h1 className="welcome-title">{`Welcome ${auth.displayName}`}</h1>
-          <div>
-            <h1 className="welcome-title">{`You need to login or register before!`}</h1>
-            <Link to="/signIn-and-signUp"> <CustomButton className="log-button custom-button">Login / Register</CustomButton> </Link>
-          </div>
         </div>
         <div className="dashboard-container">
           <div className="actions-container">
