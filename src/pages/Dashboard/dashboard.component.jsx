@@ -13,13 +13,13 @@ class Dashboard extends Component {
 
   render() {
 
-    const { books, auth } = this.props;
+    const { auth, profile } = this.props;
     if (!auth.uid) return <Redirect to="/signIn-and-signUp" />
 
     return (
       <div className="dashboard">
         <div>
-          <h1 className="welcome-title">{`Welcome ${auth.displayName}`}</h1>
+          <h1 className="welcome-title">{`Welcome ${profile.displayName}`}</h1>
         </div>
         <div className="dashboard-container">
           <div className="actions-container">
@@ -43,7 +43,8 @@ class Dashboard extends Component {
 const mapStateToProps = (state) => {
   return {
     auth: state.firebase.auth,
-    books: state.books
+    books: state.books,
+    profile: state.firebase.profile
   }
 }
 

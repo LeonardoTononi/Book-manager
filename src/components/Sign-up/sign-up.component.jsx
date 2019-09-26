@@ -9,8 +9,8 @@ import FormInput from '../Form-input/form-input.component'
 import CustomButton from '../CustomButton/custom-button.component'
 
 class SignUp extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       displayName: '',
@@ -33,6 +33,7 @@ class SignUp extends Component {
 
   render() {
     const { displayName, email, password, confirmPassword } = this.state;
+    const { authError } = this.props;
     return (
       <div className="sign-up">
         <h1>Register</h1>
@@ -69,6 +70,9 @@ class SignUp extends Component {
             handleChange={this.handleChange}
             required
           />
+          <div className="error-login">
+            {authError ? <p>{authError}, be sure to digit the correct E-mail and password.</p> : null}
+          </div>
           <CustomButton type="submit">Register</CustomButton>
         </form>
       </div>
@@ -78,6 +82,7 @@ class SignUp extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    auth: state.firebase.auth,
     authError: state.auth.authError
   }
 }

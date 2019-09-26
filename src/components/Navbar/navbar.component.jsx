@@ -20,7 +20,6 @@ class Navbar extends Component {
 
   render() {
     const { auth } = this.props;
-    console.log(this.props)
     return (
       <div className="container-nav">
         <Link to="/">
