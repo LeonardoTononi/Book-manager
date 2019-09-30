@@ -2,9 +2,10 @@ export const addBook = (book) => {
   return (dispatch, getState, {getFirebase, getFirestore}) => {
     // make async call to db(
     const firestore = getFirestore();
+    const userID = getState().firebase.auth.uid;
     firestore.collection('books').add({
       ...book,
-      userID: "ArHPBSmGfQUlLFoREXXvAMWqICV2",
+      userID: userID,
       createdAt: new Date()
     }).then(() => {
       dispatch({ type: 'ADD_BOOK', book })
