@@ -43,7 +43,7 @@ class Navbar extends Component {
               </div>
             :
             <div className="log-div">
-              <p className="login-register"><Link to="/signIn-and-signUp">Login / Register</Link></p>
+              <p className="login-register"><Link to="/signIn-and-signUp">Sing In or Sign Up</Link></p>
             </div>
         }
       </div>

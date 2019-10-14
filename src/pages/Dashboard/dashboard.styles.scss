@@ -21,9 +21,34 @@
   }
 
   .welcome-title {
-    font-size: 1.5rem;
-    font-weight: 400;
     text-align: center;
+    width: 500px;
+    margin: 0 auto 100px auto;
+    padding: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #042330;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 40px;
+      width: 30px;
+      height: 5px;
+      background: #2ce080;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      background: #2ce080;
+      top: 33px;
+      right: 40px;
+      width: 5px;
+      height: 25px;
+    }
   }
 
   .log-button {

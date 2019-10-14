@@ -40,12 +40,7 @@
       transition: background 200ms ease-in;
 
       &:hover {
-        background: #2ce080;
-        color: #fff;
-
-        a {
-          color: #fff;
-        }
+        background: #044063;
       }
 
       a {
@@ -57,27 +52,18 @@
 
   .log-div {
     display: inherit;
-    padding: 5px 15px;
+    padding: 0 10px;
     cursor: pointer;
     font-size: 1.2rem;
     transition: background 200ms ease-in;
 
     &:hover {
-      background: white;
-      color: #00457c;
-
-      a {
-        color: #00457c;
-
-        &:hover {
-          color: #00457c;
-        }
-      }
+      background: #044063;
     }
 
     a {
       text-decoration: none;
-      color: #00457c;
+      color: #fff;
     }
   }
 
