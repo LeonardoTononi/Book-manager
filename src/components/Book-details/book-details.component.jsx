@@ -5,7 +5,6 @@ import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 
 import './book-details.style.scss'
-import HarryPotterBook from '../Reading-challenge/harrypotter.jpeg'
 
 import CustomButton from '../CustomButton/custom-button.component'
 
@@ -20,7 +19,7 @@ const BookDetails = (props) => {
         <h1>{book.title}</h1>
         <div className="grid">
           <div className="col">
-            <img src={HarryPotterBook} alt="harrypotter book" />
+            <img alt="harrypotter book" />
           </div>
           <div className="col details">
             <h2>by {book.author}</h2>

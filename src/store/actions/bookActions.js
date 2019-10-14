@@ -8,10 +8,21 @@ export const addBook = (book) => {
       userID: userID,
       createdAt: new Date()
     }).then(() => {
-      dispatch({ type: 'ADD_BOOK', book })
+      dispatch({ type: 'ADD_BOOK', book });
     }).catch((err) => {
       dispatch({type: 'ADD_BOOK_ERROR', err})
     })
   } 
 }
 
+export const deleteBook = (bookID) => {
+  return (dispatch, { getFirestore }) => {
+    const firestore = getFirestore();
+    firestore.collection('books').doc(`${bookID}`).delete()
+    .then(() => {
+      dispatch({ type: 'DELETE_BOOK' })
+  }).catch(err => {
+      dispatch({ type: 'DELETE_BOOK_ERROR', err})
+    });
+  }
+}

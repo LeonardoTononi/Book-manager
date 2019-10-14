@@ -2,7 +2,7 @@ import React from 'react';
 
 import './reading-challenge.styles.scss'
 import CustomButton from '../CustomButton/custom-button.component'
-import HarryPotterBook from './harrypotter.jpeg'
+import readingChallengeIMG from '../../assets/reading-challenge.png'
 
 const ReadingChallenge = () => {
   const currentYear = new Date().getFullYear();
@@ -13,7 +13,7 @@ const ReadingChallenge = () => {
       </h1>
       <div className="grid">
         <div className="col">
-          <img src={HarryPotterBook} alt="harry potter book" />
+          <img src={readingChallengeIMG} alt="reading challenge img" />
         </div>
         <div className="col">
           <p>I want to read</p>
@@ -22,7 +22,7 @@ const ReadingChallenge = () => {
           <CustomButton>Start Challenge</CustomButton>
         </div>
       </div>
-     
+
     </div>
   )
 }

@@ -23,7 +23,7 @@ class Navbar extends Component {
     return (
       <div className="container-nav">
         <Link to="/">
-          <h1 className="logo">Book Manager</h1>
+          <h1 className="logo">BooksManager</h1>
         </Link>
         {
           auth.uid ?

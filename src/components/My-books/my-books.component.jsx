@@ -3,6 +3,7 @@ import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { firestoreConnect } from 'react-redux-firebase'
+import { deleteBook } from '../../store/actions/bookActions'
 
 import './my-books.styles.scss'
 
@@ -10,6 +11,7 @@ class MyBooks extends Component {
 
   render() {
     const { books, auth } = this.props;
+    console.log(books)
     const books_th = books.map(book => {
       if (book.userID === auth.uid) {
         return (
@@ -21,7 +23,8 @@ class MyBooks extends Component {
             <th>{book.rate}</th>
             <th className="actions-row" id={book.id}>
               <button onClick={() => {
-                deleteConfirm(book.id)
+                deleteBook(book.id);
+                console.log(book.id)
               }}><i className="far fa-trash-alt"></i></button>
               <button><i className="far fa-edit"></i></button>
             </th>
@@ -32,13 +35,15 @@ class MyBooks extends Component {
       };
     })
 
-    const deleteConfirm = (bookID) => {
-      if (window.confirm('Are you sure?')) {
-        console.log()
+    /* const deleteConfirm = (bookID) => {
+      deleteBook(bookID);
+      console.log(bookID);
+      if (window.confirm(`Are you sure?`)) {
+        deleteBook(bookID);
       } else {
         return
-      }
-    }
+      } 
+    } */
 
     return (
       <div className="list-container" >
@@ -67,8 +72,15 @@ const mapStateToProps = (state) => {
   }
 }
 
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteBook: (bookID) => dispatch(deleteBook(bookID))
+  }
+}
+
 export default compose(
-  connect(mapStateToProps),
+  connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([
     { collection: 'books' }
   ])

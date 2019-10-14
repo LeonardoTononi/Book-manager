@@ -21,8 +21,6 @@ class AddBook extends Component {
     }
   }
 
-
-
   handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value

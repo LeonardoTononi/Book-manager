@@ -1,46 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Mansalva&display=swap");
+
 .container-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 5%;
-  background: black;
-  color: white;
-  box-shadow: 0 0 10px 2px #808080d4;
+  padding: 12px 5%;
+  background: #03314b;
+  color: #fff;
+  box-shadow: 0 0 10px -2px #808080d4;
 
   a {
     text-decoration: none;
-    color: white;
+    color: #fff;
   }
 
   .logo {
     cursor: pointer;
     align-self: start;
-    text-transform: uppercase;
     margin: 0;
     font-weight: 400;
     font-size: 1.5rem;
     padding: 10px 15px;
+    color: white;
+    font-family: "Mansalva", cursive;
+    font-size: 2rem;
   }
 
   .navbar {
     display: flex;
     margin: 0;
-    color: white;
+    color: #fff;
     font-size: 1.2rem;
     align-items: flex-end;
 
     li {
       list-style: none;
-      padding: 13px 15px;
+      padding: 10px 13px;
       cursor: pointer;
       transition: background 200ms ease-in;
 
       &:hover {
-        background: white;
-        color: black;
+        background: #2ce080;
+        color: #fff;
 
         a {
-          color: black;
+          color: #fff;
         }
       }
 
@@ -60,28 +64,31 @@
 
     &:hover {
       background: white;
-      color: black;
+      color: #00457c;
 
       a {
-        color: black;
+        color: #00457c;
+
+        &:hover {
+          color: #00457c;
+        }
       }
     }
 
     a {
       text-decoration: none;
-      color: white;
+      color: #00457c;
     }
   }
 
   .hamburger {
-    background: white;
     padding: 13px 15px;
     border-radius: 50%;
     cursor: pointer;
     margin-left: 10px;
 
     i {
-      color: black;
+      color: #fff;
       font-size: 1.5rem;
     }
   }

@@ -1,14 +1,20 @@
 .reading-challenge {
   padding: 30px;
-  max-width: 400px;
+  width: 314px;
+  height: 313.16px;
   margin: 0 auto;
   border-top: 1px solid #80808030;
   border-bottom: 1px solid #80808030;
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 400;
     text-align: center;
+    margin: 0 0 21px 0;
+  }
+
+  img {
+    width: 100px;
   }
 
   input {
@@ -26,5 +32,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
+    place-items: center;
   }
 }
