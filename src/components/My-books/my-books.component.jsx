@@ -15,8 +15,8 @@ class MyBooks extends Component {
     const books_th = books.map(book => {
       if (book.userID === auth.uid) {
         return (
-          <tr key={book.id}>
-            <th><Link to={`/my-books/${book.id}`}>{book.title}</Link></th>
+          <tr key={book.id} className="rows">
+            <th className="title"><Link to={`/my-books/${book.id}`}>{book.title} <i className="far fa-eye"></i></Link></th>
             <th>{book.author}</th>
             <th>{book.note}</th>
             <th>{book.state}</th>

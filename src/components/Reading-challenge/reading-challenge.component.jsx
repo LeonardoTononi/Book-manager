@@ -16,7 +16,7 @@ const ReadingChallenge = () => {
           <img src={readingChallengeIMG} alt="reading challenge img" />
         </div>
         <div className="col">
-          <p>I want to read</p>
+          <p>I want read</p>
           <input type="number" />
           <p>books in {currentYear}</p>
           <CustomButton>Start Challenge</CustomButton>

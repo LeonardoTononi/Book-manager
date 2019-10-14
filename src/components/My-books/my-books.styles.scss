@@ -1,42 +1,112 @@
 .list-container {
-  padding: 20px;
+  padding: 20px 80px;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1500px;
   width: 100%;
 
   h2 {
-    font-weight: 400;
-    text-align: center;
-    padding-left: 5px;
+    padding: 10px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #042330;
+    position: relative;
+    text-align: start;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 10px;
+      width: 100px;
+      height: 5px;
+      background: #2ce080;
+    }
   }
 
-  table {
-    margin: 0 auto;
+  .title {
+    text-transform: uppercase;
+
+    i {
+      color: #042330;
+      font-size: 0.9rem;
+    }
   }
+
   .table-title {
     th {
       box-sizing: border-box;
       border: 4px solid white;
-      font-weight: 400;
-      background-color: #484848;
-      color: white;
+      font-weight: 700;
+      color: #042330;
       padding: 10px;
+      font-size: 1.5rem;
+      position: relative;
+      width: 350px;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        width: 80px;
+        height: 5px;
+        background: #042330;
+      }
+    }
+
+    :last-of-type {
+      width: 100px;
+    }
+  }
+
+  .rows {
+    transition: background 100ms ease-in;
+
+    &:hover {
+      background: #b9f3d4;
+      color: white;
+      font-weight: 700;
+
+      /*  th {
+        color: #fff;
+      }
+
+      a {
+        color: #fff;
+      } */
+
+      button {
+        background-color: #b9f3d4;
+      }
     }
   }
 
   th {
-    padding: 10px;
-    text-align: center;
-    font-weight: 100;
+    padding: 20px 30px 20px 15px;
+    text-align: start;
+    font-weight: 400;
     width: 150px;
+    color: #042330;
+    font-size: 1.2rem;
 
     button {
-      background-color: white;
+      background-color: transparent;
       border: none;
       padding: 4px 7px;
       color: #484848;
       cursor: pointer;
       outline: none;
+    }
+
+    a {
+      color: #042330;
+      text-decoration: none;
+    }
+
+    i {
+      background-color: transparent;
+      font-size: 1rem;
     }
   }
 
