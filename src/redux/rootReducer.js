@@ -1,12 +1,12 @@
-import authReducer from './authReducer'
-import booksReducer from './booksReducer'
+import userReducer from './user/user.reducer'
+import bookReducer from './booksReducer'
 import { combineReducers } from 'redux'
 import { firestoreReducer } from 'redux-firestore'
 import { firebaseReducer } from 'react-redux-firebase' 
 
 const rootReducer = combineReducers({
-  auth: authReducer,
-  books: booksReducer,
+  user: userReducer,
+  books: bookReducer,
   firestore: firestoreReducer,
   firebase: firebaseReducer
 })

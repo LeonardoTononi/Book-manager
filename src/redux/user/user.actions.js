@@ -22,7 +22,8 @@ export const signInWithProvider = (provider) => {
     firebase.auth().signInWithPopup(provider).then(() => {
       dispatch({ type: 'LOGIN_WITH_GOOGLE_SUCCESS' });
     }).catch(err => {
-      dispatch({ type: 'LOGIN_WITH_GOOGLE_ERROR'})
+      dispatch({ type: 'LOGIN_WITH_GOOGLE_ERROR' },
+        console.log(err))
     })
   }
 }

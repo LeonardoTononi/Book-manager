@@ -1,20 +1,20 @@
-const initState = {
-  authError: null
+const INITIAL_STATE = {
+  currentUser: null
 }
 
-const authReducer = (state = initState, action) => {
+const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'LOGIN_ERROR': 
       console.log('login error');
       return {
         ...state, 
-        authError: 'Login failed'
+        currentUser: 'Login failed'
       }
     case 'LOGIN_SUCCESS':
       console.log('login success');
       return {
         ...state,
-        authError: null
+        currentUser: null
       }
     case 'SIGNOUT_SUCCESS': 
       console.log('signout success')
@@ -23,29 +23,29 @@ const authReducer = (state = initState, action) => {
       console.log('login with google success')
       return {
         ...state,
-        authError: null
+        currentUser: null
       }
     case 'LOGIN_WITH_GOOGLE_ERROR':
       console.log('login with google error');
       return {
         ...state, 
-        authError: 'Login with google failed'
+        currentUser: 'Login with google failed'
       }
     case 'SIGNUP_SUCCESS': 
       console.log('signup success');
       return {
         ...state,
-        authError: null
+        currentUser: null
       }
     case 'SIGNUP_ERROR':
       console.log('signup error');
       return {
         ...state,
-        authError: action.err.message
+        currentUser: action.err.message
       }
     default:
       return state;
   }
 } 
 
-export default authReducer
+export default userReducer

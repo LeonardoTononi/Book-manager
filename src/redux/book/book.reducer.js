@@ -1,8 +1,8 @@
-const initState = {
+const INITAL_STATE = {
   books: []
 }
 
-const booksReducer = (state = initState, action) => {
+const bookReducer = (state = INITAL_STATE, action) => {
   switch (action.type) {
     case 'ADD_BOOK':
       console.log('added book', action.book);
@@ -21,4 +21,4 @@ const booksReducer = (state = initState, action) => {
   }
 } 
 
-export default booksReducer
+export default bookReducer
