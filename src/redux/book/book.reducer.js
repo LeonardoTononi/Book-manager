@@ -5,16 +5,20 @@ const INITAL_STATE = {
 const bookReducer = (state = INITAL_STATE, action) => {
   switch (action.type) {
     case 'ADD_BOOK':
-      console.log('added book', action.book);
-      return state;
+      return {
+        ...state,
+        payload: action.payload
+      }
     case 'ADD_BOOK_ERROR':
-      console.log('add book error');
+      console.log('ADD BOOK ERROR');
       return state;
     case 'DELETE_BOOK':
-      console.log('book deleted', action.book)
-      return state;
+      return {
+        ...state,
+        payload: action.payload
+      };
     case 'DELETE_BOOK_ERROR':
-      console.log('book deleted error')
+      console.log('BOOK DELETED ERROR')
       return state;
     default:
       return state;

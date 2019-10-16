@@ -10,10 +10,9 @@ import './my-books.styles.scss'
 class MyBooks extends Component {
 
   render() {
-    const { books, auth } = this.props;
-    console.log(books)
+    const { books, currentUser, deleteBook } = this.props;
     const books_th = books.map(book => {
-      if (book.userID === auth.uid) {
+      if (book.userID === currentUser.uid) {
         return (
           <tr key={book.id} className="rows">
             <th className="title"><Link to={`/my-books/${book.id}`}>{book.title} <i className="far fa-eye"></i></Link></th>
@@ -24,7 +23,6 @@ class MyBooks extends Component {
             <th className="actions-row" id={book.id}>
               <button onClick={() => {
                 deleteBook(book.id);
-                console.log(book.id)
               }}><i className="far fa-trash-alt"></i></button>
               <button><i className="far fa-edit"></i></button>
             </th>
@@ -68,20 +66,22 @@ class MyBooks extends Component {
 const mapStateToProps = (state) => {
   return {
     books: state.firestore.ordered.books || state.books.books,
-    auth: state.firebase.auth
+    currentUser: state.firebase.auth
   }
 }
 
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    deleteBook: (bookID) => dispatch(deleteBook(bookID))
+    deleteBook: (id) => dispatch(deleteBook(id))
   }
 }
 
 export default compose(
   connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([
-    { collection: 'books' }
+    {
+      collection: 'books'
+    }
   ])
 )(MyBooks)
