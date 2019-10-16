@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { addBook } from '../../store/actions/bookActions'
+import { addBook } from '../../redux/book/book.actions'
 import { Redirect } from 'react-router-dom'
 
 import './add-book.styles.scss'

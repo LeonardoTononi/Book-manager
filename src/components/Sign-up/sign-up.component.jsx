@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
-import { signUp } from '../../store/actions/authActions'
+import { signUp } from '../../redux/user/user.actions'
 
 import './sign-up.styles.scss'
 

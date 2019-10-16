@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { signIn } from '../../store/actions/authActions'
-import { signInWithProvider } from '../../store/actions/authActions'
+import { signIn } from '../../redux/user/user.actions'
+import { signInWithProvider } from '../../redux/user/user.actions'
 import './sign-in.styles.scss'
 
 import FormInput from '../Form-input/form-input.component'

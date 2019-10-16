@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
-import { signOut } from '../../store/actions/authActions'
+import { signOut } from '../../redux/user/user.actions'
 
 import './navbar.styles.scss';
 

@@ -30,6 +30,10 @@
     font-weight: 400;
   }
 
+  .row {
+    display: block;
+  }
+
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

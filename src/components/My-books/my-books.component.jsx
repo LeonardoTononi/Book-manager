@@ -3,7 +3,7 @@ import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { firestoreConnect } from 'react-redux-firebase'
-import { deleteBook } from '../../store/actions/bookActions'
+import { deleteBook } from '../../redux/book/book.actions'
 
 import './my-books.styles.scss'
 
