@@ -9,25 +9,36 @@ footer {
 
   p {
     color: #00000078;
+    margin: 10px 0;
+    font-size: 0.9rem;
   }
 
-  .logo {
-    cursor: pointer;
-    align-self: start;
-    margin: 0;
-    font-weight: 700;
-    font-size: 2.5rem;
+  .logo-container {
+    padding: 20px;
+
+    .logo {
+      cursor: pointer;
+      align-self: start;
+      margin: 0;
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: #03314b;
+      font-family: "Mansalva", cursive;
+    }
+
+    h5 {
+      color: #1775fc;
+      font-size: 1.2rem;
+      font-family: "Signika", sans-serif;
+      margin: 0;
+      font-weight: 400;
+      padding-top: 15px;
+    }
+  }
+
+  h4 {
+    font-weight: 600;
     color: #03314b;
-    font-family: "Mansalva", cursive;
-  }
-
-  h5 {
-    color: #1775fc;
-    font-size: 1.2rem;
-    font-family: "Signika", sans-serif;
-    margin: 0;
-    font-weight: 400;
-    padding-top: 15px;
   }
 
   .grid {
@@ -42,6 +53,18 @@ footer {
 
     p {
       padding: 5px 30px;
+    }
+  }
+
+  .socials {
+    position: absolute;
+    right: 40px;
+    bottom: 30px;
+
+    i {
+      color: #03314b;
+      font-size: 1.5rem;
+      padding: 0 10px;
     }
   }
 }

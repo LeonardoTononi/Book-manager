@@ -37,6 +37,11 @@ const Footer = () => (
       <p>User Privacy</p>
       <p>Terms</p>
     </div>
+    <div className="socials">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-linkedin-in"></i>
+    </div>
   </footer>
 )
 
