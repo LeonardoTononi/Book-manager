@@ -33,7 +33,7 @@ class SignUp extends Component {
 
   render() {
     const { displayName, email, password, confirmPassword } = this.state;
-    const { authError } = this.props;
+    const { currentUser } = this.props;
     return (
       <div className="sign-up">
         <h1>Register</h1>
@@ -71,7 +71,7 @@ class SignUp extends Component {
             required
           />
           <div className="error-login">
-            {authError ? <p>{authError}, be sure to digit the correct E-mail and password.</p> : null}
+            {currentUser ? <p>{currentUser}, be sure to digit the correct E-mail and password.</p> : null}
           </div>
           <CustomButton type="submit">Register</CustomButton>
         </form>
@@ -83,7 +83,7 @@ class SignUp extends Component {
 const mapStateToProps = (state) => {
   return {
     auth: state.firebase.auth,
-    authError: state.auth.authError
+    currentUser: state.currentUser
   }
 }
 

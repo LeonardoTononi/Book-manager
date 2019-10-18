@@ -30,7 +30,7 @@ class SignIn extends Component {
   }
 
   render() {
-    const { authError } = this.props;
+    const { currentUser } = this.props;
     const { email, password } = this.state;
 
     return (
@@ -52,7 +52,7 @@ class SignIn extends Component {
             handleChange={this.handleChange}
             required />
           <div className="error-login">
-            {authError ? <p>{authError}, be sure to digit the correct E-mail and password.</p> : null}
+            {currentUser ? <p>{currentUser}, be sure to digit the correct E-mail and password.</p> : null}
           </div>
           <CustomButton type="submit">Login</CustomButton>
           <CustomButton onClick={this.props.signInWithProvider} isGoogleSignIn>Sign in with Google</CustomButton>
@@ -64,7 +64,7 @@ class SignIn extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    authError: state.auth.authError
+    currentUser: state.currentUser
   }
 }
 
