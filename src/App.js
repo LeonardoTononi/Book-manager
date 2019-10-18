@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard/dashboard.component'
 import AddBook from './components/Add-book/add-book.component'
 import BooksLibrary from './pages/Books-library/books-library.component'
 import Navbar from './components/Navbar/navbar.component'
+import Footer from './components/Footer/footer.component'
 import SignInAndSignUp from './pages/Sign-in-and-sign-up/sign-in-and-sign-up.component';
 import BookDetails from './components/Book-details/book-details.component'
 
@@ -41,6 +42,7 @@ class App extends Component  {
             <Route path='/my-books/:id' component={BookDetails}/>
             <Route path='/signIn-and-signUp' render={() => <SignInAndSignUp />} />
           </Switch>
+          <Footer />
        </div>
      </BrowserRouter>
     );
