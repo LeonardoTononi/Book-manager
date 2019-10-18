@@ -30,11 +30,14 @@ class Dashboard extends Component {
               <CustomButton>My profile</CustomButton>
             </div>
           </div>
-          <div className="feed"></div>
+          <div className="feed">
+
+          </div>
           <div className="challenge-container">
             <ReadingChallenge />
           </div>
         </div>
+
       </div>
     )
   }

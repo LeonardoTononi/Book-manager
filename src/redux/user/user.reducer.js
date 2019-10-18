@@ -4,17 +4,17 @@ const INITIAL_STATE = {
 
 const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'LOGIN_ERROR': 
-      console.log('login error');
-      return {
-        ...state, 
-        currentUser: 'Login failed'
-      }
     case 'LOGIN_SUCCESS':
       console.log('login success');
       return {
         ...state,
         currentUser: null
+      }
+    case 'LOGIN_ERROR': 
+      console.log('login error');
+      return {
+        ...state, 
+        currentUser: 'Login failed'
       }
     case 'SIGNOUT_SUCCESS': 
       console.log('signout success')

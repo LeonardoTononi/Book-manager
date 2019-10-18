@@ -1,5 +1,6 @@
 import userReducer from './user/user.reducer'
 import bookReducer from './book/book.reducer'
+import challengeReducer from './challenge/challenge.reducer'
 import { combineReducers } from 'redux'
 import { firestoreReducer } from 'redux-firestore'
 import { firebaseReducer } from 'react-redux-firebase' 
@@ -7,6 +8,7 @@ import { firebaseReducer } from 'react-redux-firebase'
 const rootReducer = combineReducers({
   user: userReducer,
   books: bookReducer,
+  challenge: challengeReducer,
   firestore: firestoreReducer,
   firebase: firebaseReducer
 
