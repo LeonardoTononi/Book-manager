@@ -11,6 +11,7 @@ class MyBooks extends Component {
 
   render() {
     const { books, currentUser, deleteBook } = this.props;
+
     const books_th = books.map(book => {
       if (book.userID === currentUser.uid) {
         return (

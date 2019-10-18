@@ -5,6 +5,10 @@ import { Redirect } from 'react-router-dom'
 
 import './add-book.styles.scss'
 
+
+import BoyImage from '../../assets/boy.svg'
+import GirlImage from '../../assets/girl.svg'
+
 import FormInput from '../Form-input/form-input.component'
 import CustomButton from '../CustomButton/custom-button.component'
 
@@ -93,7 +97,13 @@ class AddBook extends Component {
             <CustomButton>Add book</CustomButton>
           </div>
         </form>
-      </div >
+        <div className="imageBoy">
+          <img src={BoyImage} alt="" />
+        </div>
+        <div className="imageGirl">
+          <img src={GirlImage} alt="" />
+        </div>
+      </div>
     )
   }
 }
