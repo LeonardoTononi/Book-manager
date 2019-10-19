@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Signika:300,400,600,700&display=swap");
 
 footer {
-  background: #00a3ff1c;
+  background: #e4f5ff;
   padding: 20px 40px 20px 120px;
   position: fixed;
   bottom: 0;
@@ -45,9 +45,11 @@ footer {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
+    padding: 10px;
   }
 
   .copyright {
+    border-top: 2px solid white;
     display: flex;
     width: 100%;
 

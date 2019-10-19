@@ -11,12 +11,14 @@ import GirlImage from '../../assets/girl.svg'
 
 import FormInput from '../Form-input/form-input.component'
 import CustomButton from '../CustomButton/custom-button.component'
+import Axios from 'axios';
 
 class AddBook extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      books: [],
       title: null,
       author: null,
       note: null,
@@ -37,11 +39,29 @@ class AddBook extends Component {
     e.target.reset();
   }
 
+  handleSearch = (e) => {
+    const input = e.target.value;
+    const title = input.replace(' ', '+');
+    const googleAPIkey = 'AIzaSyApOE4Agnt7jPoD4T1MAS6P4Vb0RgsX07w';
+    const req = `https://www.googleapis.com/books/v1/volumes?q=${title}&key=${googleAPIkey}`;
+    Axios.get(req)
+      .then(res => {
+        const items = res.data.items;
+        const filteredItems = items.filter(item => item.volumeInfo.language === "en")
+        this.setState({
+          books: filteredItems
+        })
+      })
+  }
+
 
 
   render() {
     const { auth } = this.props;
+    const { books } = this.state;
     if (!auth.uid) return <Redirect to="/signIn-and-signUp" />
+
+
     return (
       <div className="form-container">
         <h2>Add a new book</h2>
@@ -58,8 +78,18 @@ class AddBook extends Component {
             id="title"
             name="title"
             type="text"
-            handleChange={this.handleChange}
+            handleChange={this.handleSearch}
             required />
+          <div className="search-list">
+            {
+              books.map(book => (
+                <div className="book" key={book.id}>
+                  <h4>{book.volumeInfo.title}</h4>
+                  <h5>Authors: {book.volumeInfo.authors}</h5>
+                </div>
+              ))
+            }
+          </div>
           <FormInput
             label="Author"
             id="author"
@@ -71,9 +101,9 @@ class AddBook extends Component {
             <label>State</label>
             <select onChange={this.handleChange} id="state">
               <option name="choose" value="choose">Did you already read it?</option>
-              <option name="wantRead" value="Want to read"> Want to Read</option>
-              <option name="reading" value="Reading"> Reading</option>
-              <option name="read" value="Read">Read</option>
+              <option name="toRead" value="To read"> To Read</option>
+              <option name="readingNow" value="Reading now"> Reading Now</option>
+              <option name="haveRead" value="Have Read">Have Read</option>
             </select>
           </div>
           <FormInput
@@ -97,12 +127,12 @@ class AddBook extends Component {
             <CustomButton>Add book</CustomButton>
           </div>
         </form>
-        <div className="imageBoy">
+        {/* <div className="imageBoy">
           <img src={BoyImage} alt="" />
         </div>
         <div className="imageGirl">
           <img src={GirlImage} alt="" />
-        </div>
+        </div> */}
       </div>
     )
   }
