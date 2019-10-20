@@ -16,7 +16,7 @@ class MyBooks extends Component {
       if (book.userID === currentUser.uid) {
         return (
           <tr key={book.id} className="rows">
-            <th className="title"><Link to={`/my-books/${book.id}`}>{book.title} <i className="far fa-eye"></i></Link></th>
+            <th className="title"><Link to={`/my-books/${book.id}`}>{book.title} </Link></th>
             <th>{book.author}</th>
             <th>{book.note}</th>
             <th>{book.state}</th>
@@ -55,6 +55,7 @@ class MyBooks extends Component {
               <th>Note</th>
               <th>State</th>
               <th>Rating</th>
+              <th></th>
             </tr>
             {books_th}
           </tbody>

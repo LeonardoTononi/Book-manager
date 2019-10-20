@@ -22,12 +22,19 @@
       height: 5px;
       background: #2ce080;
     }
+
+    :last-of-type {
+      &:after {
+        content: "";
+        width: 0;
+        height: 0;
+      }
+    }
   }
 
   table {
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 17px 1px #c1c1c16b;
+    box-shadow: 0 0 0px 13px #c1c1c16b;
+    border-collapse: collapse;
   }
 
   .title {
@@ -68,22 +75,31 @@
 
   .rows {
     transition: background 100ms ease-in;
+    padding: 10px;
 
     &:hover {
-      background: #b9f3d4;
-      color: white;
+      background: #03314b;
+      color: #fff;
       font-weight: 700;
 
-      /*  th {
+      th {
         color: #fff;
       }
 
       a {
         color: #fff;
-      } */
+      }
 
       button {
-        background-color: #b9f3d4;
+        background-color: transparent;
+
+        i {
+          color: #fff;
+        }
+      }
+
+      .title i {
+        color: #fff;
       }
     }
   }
@@ -114,9 +130,5 @@
       background-color: transparent;
       font-size: 1rem;
     }
-  }
-
-  .actions-row {
-    display: flex;
   }
 }

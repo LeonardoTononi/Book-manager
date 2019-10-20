@@ -12,6 +12,7 @@ import GirlImage from '../../assets/girl.svg'
 import FormInput from '../Form-input/form-input.component'
 import CustomButton from '../CustomButton/custom-button.component'
 import Axios from 'axios';
+import { nullableTypeAnnotation } from '@babel/types';
 
 class AddBook extends Component {
   constructor(props) {
@@ -23,7 +24,8 @@ class AddBook extends Component {
       author: null,
       note: null,
       rate: null,
-      state: null
+      image: null,
+      inputIsActive: false
     }
   }
 
@@ -40,27 +42,33 @@ class AddBook extends Component {
   }
 
   handleSearch = (e) => {
-    const input = e.target.value;
-    const title = input.replace(' ', '+');
-    const googleAPIkey = 'AIzaSyApOE4Agnt7jPoD4T1MAS6P4Vb0RgsX07w';
-    const req = `https://www.googleapis.com/books/v1/volumes?q=${title}&key=${googleAPIkey}`;
-    Axios.get(req)
-      .then(res => {
-        const items = res.data.items;
-        const filteredItems = items.filter(item => item.volumeInfo.language === "en")
-        this.setState({
-          books: filteredItems
+    // Hide dropdown search input
+    if (e.target.value === "") {
+      this.setState({ inputIsActive: false });
+    }
+    else {
+      const input = e.target.value;
+      this.setState({ inputIsActive: !false });
+      const title = input.replace(' ', '+');
+      const googleAPIkey = 'AIzaSyAF3m0FTGMZQaARMuDp8LhWcSNa6FC_QN4';
+      const req = `https://www.googleapis.com/books/v1/volumes?q=${title}&key=${googleAPIkey}`;
+      Axios.get(req)
+        .then(res => {
+          const items = res.data.items;
+          const filteredItems = items.filter(item => item.volumeInfo.language === "en")
+          this.setState({
+            books: filteredItems
+          })
         })
-      })
+    }
   }
 
 
 
   render() {
     const { auth } = this.props;
-    const { books } = this.state;
+    const { books, inputIsActive } = this.state;
     if (!auth.uid) return <Redirect to="/signIn-and-signUp" />
-
 
     return (
       <div className="form-container">
@@ -80,16 +88,21 @@ class AddBook extends Component {
             type="text"
             handleChange={this.handleSearch}
             required />
-          <div className="search-list">
-            {
-              books.map(book => (
-                <div className="book" key={book.id}>
-                  <h4>{book.volumeInfo.title}</h4>
-                  <h5>Authors: {book.volumeInfo.authors}</h5>
-                </div>
-              ))
-            }
-          </div>
+
+          {
+            inputIsActive ?
+              <div className="search-list">
+                {books.map(book => (
+                  <div className="book" key={book.id}>
+                    <h4>{book.volumeInfo.title}</h4>
+                    <h5>Authors: {book.volumeInfo.authors}</h5>
+                  </div>
+                ))}
+              </div>
+              :
+              null
+          }
+
           <FormInput
             label="Author"
             id="author"
