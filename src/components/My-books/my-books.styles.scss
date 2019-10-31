@@ -12,6 +12,7 @@
     color: #042330;
     position: relative;
     text-align: start;
+    margin: 0;
 
     &:after {
       content: "";
@@ -33,7 +34,7 @@
   }
 
   table {
-    box-shadow: 0 0 0px 13px #c1c1c16b;
+    box-shadow: 0 0 0px 7px #c1c1c16b;
     border-collapse: collapse;
   }
 
@@ -55,7 +56,7 @@
       padding: 10px;
       font-size: 1.5rem;
       position: relative;
-      width: 350px;
+      width: 250px;
 
       &:after {
         content: "";
@@ -67,39 +68,43 @@
         background: #042330;
       }
     }
+  }
 
-    :last-of-type {
-      width: 100px;
-    }
+  th:first-of-type:after {
+    width: 0;
+    height: 0;
+  }
+
+  th:last-of-type:after {
+    width: 0;
+    height: 0;
   }
 
   .rows {
-    transition: background 100ms ease-in;
+    transition: background 150ms ease-in-out;
     padding: 10px;
 
+    .cover-book {
+      img {
+        width: 50px;
+        transition: transform 100ms ease-in;
+      }
+    }
+
     &:hover {
-      background: #03314b;
-      color: #fff;
+      background: whitesmoke;
       font-weight: 700;
-
-      th {
-        color: #fff;
-      }
-
-      a {
-        color: #fff;
-      }
 
       button {
         background-color: transparent;
-
-        i {
-          color: #fff;
-        }
       }
 
       .title i {
         color: #fff;
+      }
+
+      .cover-book img {
+        transform: scale(1.5);
       }
     }
   }

@@ -22,20 +22,27 @@ export const addBook = (book) => {
   } 
 }
 
-export const deleteBook = (id) => {
+export const deleteBook = (id, history) => {
   return (dispatch, getState, { getFirestore }) => {
     const firestore = getFirestore();
-    firestore.collection('books').doc(id).delete()
-    .then(() => {
-      dispatch({
-        type: 'DELETE_BOOK',
-        payload: id
-      })
+
+    // retrive DOC id 
+    firestore.collection('books').where("id", "==", id).get()
+      .then(snapShot => snapShot.forEach(doc => {
+        // delete book document
+        firestore.collection('books').doc(doc.id).delete()
+        .then(() => {
+          dispatch({
+            type: 'DELETE_BOOK',
+            payload: doc
+          })
   }).catch(err => {
     dispatch({
       type: 'DELETE_BOOK_ERROR',
       payload: err
     })
     });
+      }))
+      .catch(err => console.log(err))
   }
 }

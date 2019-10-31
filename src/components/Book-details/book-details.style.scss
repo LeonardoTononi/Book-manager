@@ -2,9 +2,8 @@
   padding: 20px;
   margin: 100px auto;
   max-width: 500px;
-  border-radius: 20px;
   width: 100%;
-  box-shadow: 0 0 10px 10px #f3f2f2;
+  box-shadow: 0 0 0px 9px #03314b;
 
   .close-window {
     i {
@@ -16,9 +15,24 @@
   }
 
   h1 {
-    font-weight: 400;
-    text-align: center;
-    padding-bottom: 20px;
+    padding: 10px;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: #042330;
+    position: relative;
+    text-align: start;
+    margin-bottom: 80px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 10px;
+      width: 200px;
+      height: 5px;
+      background: #2ce080;
+    }
   }
 
   .amazon-btn {
@@ -53,6 +67,7 @@
 
     img {
       width: 150px;
+      border: 1px solid black;
     }
 
     .details {

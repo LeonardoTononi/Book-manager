@@ -9,46 +9,56 @@ import './book-details.style.scss'
 import CustomButton from '../CustomButton/custom-button.component'
 
 const BookDetails = (props) => {
-  const { book } = props;
-  if (book) {
-    return (
-      <div className="book-details">
-        <Link to="/my-books">
-          <div className="close-window"><i className="fas fa-times"></i></div>
-        </Link>
-        <h1>{book.title}</h1>
-        <div className="grid">
-          <div className="col">
-            <img alt="harrypotter book" />
+
+  if (props.books) {
+    const book = props.books.filter(book => book.id === props.match.params.id)
+    console.log(book)
+    if (book) {
+      const bInfo = book[0].volumeInfo;
+      return (
+        <div className="book-details">
+          <Link to="/my-books">
+            <div className="close-window"><i className="fas fa-times"></i></div>
+          </Link>
+          <h1>{bInfo.title}</h1>
+          <div className="grid">
+            <div className="col">
+              <img src={bInfo.imageLinks.thumbnail} alt="cover book" />
+            </div>
+            <div className="col details">
+              <h2>by {bInfo.authors}</h2>
+              <p>Page: {bInfo.pageCount}</p>
+              <p>Published in {bInfo.publishedDate}</p>
+              <p><i className="fas fa-share-alt"></i> Share with a friend!</p>
+            </div>
           </div>
-          <div className="col details">
-            <h2>by {book.author}</h2>
-            <p>State: {book.state}</p>
-            <p>Notes: {book.note}</p>
-            <p>{book.rate} /5 on 2345 reviews</p>
-            <p><i className="fas fa-share-alt"></i> Share with a friend!</p>
+          <div className="amazon-btn">
+            <CustomButton>Buy on Amazon</CustomButton>
           </div>
         </div>
-        <div className="amazon-btn">
-          <CustomButton>Buy on Amazon</CustomButton>
+      )
+    } else {
+      return (
+        <div className="book-details">
+          <h1>Sorry, We can't find that book</h1>
         </div>
-      </div>
-    )
+      )
+    }
   } else {
     return (
       <div className="book-details">
-        <h1>... Loading ...</h1>
+        <h1>Sorry, There is a problem with you internet provider!</h1>
       </div>
     )
   }
+
+
 }
 
-const mapStateToProps = (state, ownProps) => {
-  const id = ownProps.match.params.id;
-  const books = state.firestore.data.books;
-  const book = books ? books[id] : null
+const mapStateToProps = (state) => {
+  const books = state.firestore.ordered.books;
   return {
-    book: book
+    books
   }
 }
 

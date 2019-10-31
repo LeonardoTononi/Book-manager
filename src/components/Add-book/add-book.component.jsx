@@ -5,14 +5,9 @@ import { Redirect } from 'react-router-dom'
 
 import './add-book.styles.scss'
 
-
-import BoyImage from '../../assets/boy.svg'
-import GirlImage from '../../assets/girl.svg'
-
 import FormInput from '../Form-input/form-input.component'
 import CustomButton from '../CustomButton/custom-button.component'
 import Axios from 'axios';
-import { nullableTypeAnnotation } from '@babel/types';
 
 class AddBook extends Component {
   constructor(props) {
@@ -20,6 +15,7 @@ class AddBook extends Component {
 
     this.state = {
       books: [],
+      bookToAdd: null,
       title: null,
       author: null,
       note: null,
@@ -29,19 +25,21 @@ class AddBook extends Component {
     }
   }
 
-  handleChange = (e) => {
+
+  /* handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value
     })
-  }
+  } */
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addBook(this.state);
+    this.props.addBook(this.state.bookToAdd[0]);
     e.target.reset();
   }
 
   handleSearch = (e) => {
+    e.persist();
     // Hide dropdown search input
     if (e.target.value === "") {
       this.setState({ inputIsActive: false });
@@ -63,6 +61,16 @@ class AddBook extends Component {
     }
   }
 
+  handleData = (e) => {
+    e.persist();
+    const bookToAdd = this.state.books.filter(book => {
+      return book.id === e.target.dataset.id
+    })
+    this.setState({
+      bookToAdd,
+      inputIsActive: false
+    })
+  }
 
 
   render() {
@@ -71,8 +79,7 @@ class AddBook extends Component {
     if (!auth.uid) return <Redirect to="/signIn-and-signUp" />
 
     return (
-      <div className="form-container">
-        <h2>Add a new book</h2>
+      <div className="form-container" onClick={this.closeDropdown}>
         {
           (this.state.isSubmitted === true) ?
             (<div className="success-message">
@@ -82,70 +89,31 @@ class AddBook extends Component {
         }
         <form onSubmit={this.handleSubmit}>
           <FormInput
-            label="Title"
             id="title"
             name="title"
             type="text"
+            placeholder="Search a book for title"
             handleChange={this.handleSearch}
+            autoComplete="off"
             required />
 
           {
             inputIsActive ?
               <div className="search-list">
                 {books.map(book => (
-                  <div className="book" key={book.id}>
-                    <h4>{book.volumeInfo.title}</h4>
-                    <h5>Authors: {book.volumeInfo.authors}</h5>
+                  <div className="book" key={book.id} onClick={this.handleData} data-id={book.id}>
+                    <h4 data-id={book.id}>{book.volumeInfo.title}</h4>
+                    <h5 data-id={book.id}>{book.volumeInfo.authors}</h5>
                   </div>
                 ))}
               </div>
               :
               null
           }
-
-          <FormInput
-            label="Author"
-            id="author"
-            name="author"
-            type="text"
-            handleChange={this.handleChange}
-            required />
-          <div className="row">
-            <label>State</label>
-            <select onChange={this.handleChange} id="state">
-              <option name="choose" value="choose">Did you already read it?</option>
-              <option name="toRead" value="To read"> To Read</option>
-              <option name="readingNow" value="Reading now"> Reading Now</option>
-              <option name="haveRead" value="Have Read">Have Read</option>
-            </select>
-          </div>
-          <FormInput
-            label="Rate"
-            id="rate"
-            name="rate"
-            type="number"
-            min="1"
-            max="5"
-            handleChange={this.handleChange}
-            required />
-          <FormInput
-            label="Notes about the book"
-            id="note"
-            name="note"
-            type="text"
-            handleChange={this.handleChange}
-            isTextArea
-          />
           <div className="row">
             <CustomButton>Add book</CustomButton>
           </div>
         </form>
-        {/* <div className="imageBoy">
-          <img src={BoyImage} alt="" />
-        </div>
-        <div className="imageGirl">
-          <img src={GirlImage} alt="" />
-        </div> */}
       </div>
     )
   }

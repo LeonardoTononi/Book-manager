@@ -1,6 +1,5 @@
 .form-container {
-  padding: 20px;
-  margin: 0 auto;
+  padding: 40px 0;
   width: 100%;
   max-width: 600px;
 
@@ -26,12 +25,12 @@
   .search-list {
     background: #fff;
     position: absolute;
-    left: 50%;
-    margin-left: -270px;
-    width: 540px;
+    width: 600px;
     box-shadow: 0 0 9px 0px #00000036;
     overflow: auto;
-    max-height: 300px;
+    z-index: 999;
+    max-height: 500px;
+
 
     .book {
       border-bottom: 4px solid #2ce080;

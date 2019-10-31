@@ -36,14 +36,14 @@ class App extends Component  {
        <div className="container">
           <Navbar />
           <Switch>
-            <Route exact path='/' render={() => <Dashboard addBook={this.addBook} />} />
+            <Route exact path='/' render={(props) => <Dashboard {...props} addBook={this.addBook} />} />
             <Route path='/add-new-book' render={() => <AddBook addBook={this.addBook} />} />
-            <Route exact path='/my-books' render={() => <BooksLibrary deleteBook={this.deleteBook} />} />
+            <Route exact path='/my-books' render={(props) => <BooksLibrary {...props} deleteBook={this.deleteBook} />} />
             <Route path='/my-books/:id' component={BookDetails}/>
             <Route path='/signIn-and-signUp' render={() => <SignInAndSignUp />} />
           </Switch>
-          <Footer />
-       </div>
+        </div>
+        <Footer />
      </BrowserRouter>
     );
   }

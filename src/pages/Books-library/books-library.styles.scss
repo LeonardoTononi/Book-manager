@@ -4,6 +4,18 @@
   max-width: 1500px;
   margin: 0 auto;
   text-align: center;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-gap: 40px;
+  place-items: center;
+
+  .actions-container {
+    margin-top: 150px;
+    border: none;
+    box-shadow: 0 0 0px 7px #c1c1c16b;
+    display: grid;
+    place-content: center;
+  }
 
   .log-button {
     width: 235px;

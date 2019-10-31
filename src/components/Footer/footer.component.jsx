@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './footer.styles.scss'
 
 const Footer = () => (
-  <footer>
+  <div className="footer">
     <div className="grid">
       <div className="logo-container">
         <h1 className="logo">BooksManager</h1>
@@ -42,7 +42,7 @@ const Footer = () => (
       <i className="fab fa-twitter"></i>
       <i className="fab fa-linkedin-in"></i>
     </div>
-  </footer>
+  </div>
 )
 
 export default Footer 
