@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 import Dashboard from './pages/Dashboard/dashboard.component'
-import AddBook from './components/Add-book/add-book.component'
 import BooksLibrary from './pages/Books-library/books-library.component'
 import Navbar from './components/Navbar/navbar.component'
 import Footer from './components/Footer/footer.component'
@@ -36,8 +35,7 @@ class App extends Component  {
        <div className="container">
           <Navbar />
           <Switch>
-            <Route exact path='/' render={(props) => <Dashboard {...props} addBook={this.addBook} />} />
-            <Route path='/add-new-book' render={() => <AddBook addBook={this.addBook} />} />
+            <Route exact path='/' render={(props) => <Dashboard {...props}  />} />
             <Route exact path='/my-books' render={(props) => <BooksLibrary {...props} deleteBook={this.deleteBook} />} />
             <Route path='/my-books/:id' component={BookDetails}/>
             <Route path='/signIn-and-signUp' render={() => <SignInAndSignUp />} />

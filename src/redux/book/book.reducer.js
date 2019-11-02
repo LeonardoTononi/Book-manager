@@ -1,5 +1,6 @@
 const INITAL_STATE = {
-  books: []
+  books: [],
+  added: false
 }
 
 const bookReducer = (state = INITAL_STATE, action) => {

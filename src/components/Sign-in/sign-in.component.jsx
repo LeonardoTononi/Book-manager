@@ -42,15 +42,14 @@ class SignIn extends Component {
             name="email"
             type="email"
             value={email}
-            handleChange={this.handleChange}
-            required />
+            handleChange={this.handleChange} />
           <FormInput
             label="Password"
             name="password"
             type="password"
             value={password}
             handleChange={this.handleChange}
-            required />
+          />
           <div className="error-login">
             {currentUser ? <p>{currentUser}, be sure to digit the correct E-mail and password.</p> : null}
           </div>

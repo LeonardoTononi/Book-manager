@@ -1,15 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
 import ReadingChallenge from '../../components/Reading-challenge/reading-challenge.component'
-import Actions from '../../components/Actions/actions.component'
 
 import './dashboard.styles.scss'
 
 const Dashboard = (props) => {
 
-  const { auth, profile, match } = props;
+  const { auth, profile } = props;
   if (!auth.uid) return <Redirect to="/signIn-and-signUp" />
 
   return (
@@ -18,7 +17,6 @@ const Dashboard = (props) => {
         <h1 className="welcome-title">{`Welcome ${profile.displayName}`}</h1>
       </div>
       <div className="dashboard-container">
-        <Actions match={match} />
         <div className="feed">
         </div>
         <div className="challenge-container">

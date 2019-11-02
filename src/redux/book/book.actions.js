@@ -22,7 +22,7 @@ export const addBook = (book) => {
   } 
 }
 
-export const deleteBook = (id, history) => {
+export const deleteBook = (id, books) => {
   return (dispatch, getState, { getFirestore }) => {
     const firestore = getFirestore();
 
@@ -34,7 +34,7 @@ export const deleteBook = (id, history) => {
         .then(() => {
           dispatch({
             type: 'DELETE_BOOK',
-            payload: doc
+            payload: books
           })
   }).catch(err => {
     dispatch({

@@ -7,19 +7,20 @@ import { deleteBook } from '../../redux/book/book.actions'
 
 import AddBook from '../Add-book/add-book.component'
 
+import noImage from '../../assets/no-image.png'
+
 import './my-books.styles.scss'
 
 class MyBooks extends Component {
 
   render() {
-    console.log(this.props, "PROPS")
     const { books, currentUser, deleteBook } = this.props;
 
     const books_th = books.map(book => {
       if (book.userID === currentUser.uid) {
         return (
           <tr key={book.id} className="rows">
-            <th className="cover-book"><img src={book.volumeInfo.imageLinks.smallThumbnail} alt="book cover" /></th>
+            <th className="cover-book"><img src={book.volumeInfo.imageLinks.smallThumbnail ? book.volumeInfo.imageLinks.smallThumbnail : noImage} alt="book cover" /></th>
             <th className="title"><Link to={`/my-books/${book.id}`}>{book.volumeInfo.title} </Link></th>
             <th>{book.volumeInfo.authors}</th>
             <th className="actions-row" id={book.id}>
