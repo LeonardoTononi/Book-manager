@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^6.3.0"
+    "eslint": "^6.3.0",
+    "redux-devtools-extension": "^2.13.8"
   }
 }

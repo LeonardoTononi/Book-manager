@@ -1,28 +1,27 @@
-import React from 'react';
-import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-import './books-library.styles.scss'
+import './books-library.styles.scss';
 
-import MyBooks from '../../components/My-books/my-books.component'
+import MyBooks from '../../components/My-books/my-books.component';
 
-const BooksLibrary = (props) => {
-
+const BooksLibrary = props => {
   const { auth, books, deleteBook } = props;
-  if (!auth.uid) return <Redirect to="/signIn-and-signUp" />
+  if (!auth.uid) return <Redirect to='/signIn-and-signUp' />;
 
   return (
-    <div className="books-library">
+    <div className='books-library'>
       <MyBooks books={books} deleteBook={deleteBook} />
     </div>
-  )
-}
+  );
+};
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     auth: state.firebase.auth,
     books: state.firestore.ordered.books || state.books.books
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps)(BooksLibrary)
+export default connect(mapStateToProps)(BooksLibrary);

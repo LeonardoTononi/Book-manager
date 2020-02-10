@@ -1,15 +1,23 @@
 .reading-challenge {
   padding: 30px;
-  max-width: 400px;
+  width: 314px;
+  height: 313.16px;
   margin: 0 auto;
   border-top: 1px solid #80808030;
   border-bottom: 1px solid #80808030;
 }
 
 .reading-challenge h1 {
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: 1.3rem;
   text-align: center;
+  margin: 0 0 21px 0;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #042330;
+}
+
+.reading-challenge img {
+  width: 100px;
 }
 
 .reading-challenge input {
@@ -23,11 +31,16 @@
   font-weight: 400;
 }
 
+.reading-challenge .row {
+  display: block;
+}
+
 .reading-challenge .grid {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
+  place-items: center;
 }
 /*# sourceMappingURL=reading-challenge.styles.css.map */

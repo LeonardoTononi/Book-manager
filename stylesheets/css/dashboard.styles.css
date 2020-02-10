@@ -14,30 +14,38 @@
   place-items: center;
 }
 
-.dashboard .actions-container {
-  border-top: 1px solid #80808030;
-  border-bottom: 1px solid #80808030;
-  max-width: 400px;
-  padding: 30px;
-  height: 313.16px;
-  width: 314px;
+.dashboard .welcome-title {
+  text-align: center;
+  width: 500px;
+  margin: 0 auto 100px auto;
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #042330;
+  position: relative;
 }
 
-.dashboard .welcome-title {
-  font-size: 1.5rem;
-  font-weight: 400;
-  text-align: center;
+.dashboard .welcome-title:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 40px;
+  width: 30px;
+  height: 5px;
+  background: #2ce080;
+}
+
+.dashboard .welcome-title:before {
+  content: "";
+  position: absolute;
+  background: #2ce080;
+  top: 33px;
+  right: 40px;
+  width: 5px;
+  height: 25px;
 }
 
 .dashboard .log-button {
   width: 235px;
-}
-
-.dashboard .actions {
-  text-align: center;
-}
-
-.dashboard .buttons-container {
-  margin: 0 auto;
 }
 /*# sourceMappingURL=dashboard.styles.css.map */

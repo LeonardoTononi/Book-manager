@@ -1,42 +1,116 @@
-.form-container {
-  padding: 20px;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 600px;
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
 }
 
-.form-container h2 {
-  font-weight: 400;
-  text-align: start;
-  padding-left: 10px;
-  text-align: start;
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
-.form-container .row {
+.add-book-container {
+  padding: 5rem 0 7rem 0;
+  max-width: 400px;
+}
+
+.add-book-container h2 {
   padding: 10px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #042330;
+  position: relative;
+}
+
+.add-book-container h2:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  width: 100px;
+  height: 5px;
+  background: #2ce080;
+}
+
+.add-book-container button {
+  width: 120px;
+  font-size: 1rem;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.add-book-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.add-book-container .search-list {
+  margin: 50px 0;
+  width: 1000px;
+  overflow: auto;
+  z-index: 999;
+  max-height: 500px;
+}
+
+.add-book-container .search-list .book {
+  border-bottom: 2px solid #03314b;
+  padding: 10px 5px;
+  cursor: pointer;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 0.2fr 2fr;
+      grid-template-columns: 0.2fr 2fr;
+  place-items: center;
+  text-align: start;
 }
 
-.form-container .row label {
-  font-size: 1.2rem;
-  padding-bottom: 10px;
+.add-book-container .search-list .book:hover {
+  background-color: whitesmoke;
 }
 
-.form-container .row input {
-  padding: 2px;
+.add-book-container .search-list .book img {
+  max-width: 50px;
+}
+
+.add-book-container .search-list .book h4 {
+  margin: 20px 0;
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+.add-book-container .search-list .book h5 {
+  font-weight: 400;
+}
+
+.add-book-container .search-list .book .book-col:last-of-type {
+  place-self: start;
+}
+
+.add-book-container .row {
+  padding: 0;
+}
+
+.add-book-container .row label {
+  padding: 0;
+}
+
+.add-book-container .row input {
+  padding: 1rem;
   outline: none;
   font-size: 1rem;
+  height: 30px;
 }
 
-.form-container .row textarea {
-  outline: none;
-  padding: 3px;
-  border: 1px solid #48484838;
-  font-size: 1rem;
-}
-
-.form-container .success-message {
+.add-book-container .success-message {
   padding: 7px 5px;
   margin-top: 10px;
   text-align: center;
@@ -45,9 +119,38 @@
   margin: 15px auto;
 }
 
-.form-container .success-message p {
+.add-book-container .success-message p {
   margin: 0;
   padding: 0;
   color: white;
+}
+
+.imageBoy img {
+  width: 350px;
+  bottom: 260px;
+  position: absolute;
+  left: 0;
+}
+
+.imageGirl img {
+  width: 350px;
+  bottom: 260px;
+  position: absolute;
+  right: 0;
+}
+
+select {
+  border-radius: 0;
+  outline: none;
+  font-size: 1rem;
+  height: 26px;
+  background: #fff;
+}
+
+select:not([multiple]) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-left: 4px;
+  border: 1px solid #48484857;
 }
 /*# sourceMappingURL=add-book.styles.css.map */
