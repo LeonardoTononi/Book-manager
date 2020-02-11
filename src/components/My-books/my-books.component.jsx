@@ -49,15 +49,15 @@ class MyBooks extends Component {
       }
     });
 
-    /* const deleteConfirm = (bookID) => {
+    const deleteConfirm = bookID => {
       deleteBook(bookID);
       console.log(bookID);
       if (window.confirm(`Are you sure?`)) {
         deleteBook(bookID);
       } else {
-        return
-      } 
-    } */
+        return;
+      }
+    };
 
     return (
       <div>

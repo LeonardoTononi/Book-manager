@@ -30,9 +30,6 @@ class Navbar extends Component {
             <div>
               <ul className='navbar'>
                 <li>
-                  <Link to='/'>Dashboard</Link>
-                </li>
-                <li>
                   <Link to='/my-books'>My Books</Link>
                 </li>
                 <li className='logout' onClick={this.props.signOut}>
