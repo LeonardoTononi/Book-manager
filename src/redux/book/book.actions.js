@@ -1,5 +1,16 @@
+export const addBook = book => ({
+  type: 'ADD_BOOK',
+  payload: book
+});
+
+export const deleteBook = book => ({
+  type: 'DELETE_BOOK',
+  payload: book
+});
+/* 
+
 export const addBook = book => {
-  return (dispatch, getState, { getFirebase, getFirestore }) => {
+  return (dispatch, getState, { getFirestore }) => {
     // make async call to db(
     const firestore = getFirestore();
     const uid = getState().firebase.auth.uid;
@@ -58,3 +69,4 @@ export const deleteBook = (id, books) => {
       .catch(err => console.log(err));
   };
 };
+ */

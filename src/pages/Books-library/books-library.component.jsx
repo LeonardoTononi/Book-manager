@@ -24,7 +24,7 @@ const BooksLibrary = props => {
 const mapStateToProps = state => {
   return {
     auth: state.firebase.auth,
-    books: state.firestore.ordered.books || state.books.books
+    books: state.shelf.books
   };
 };
 

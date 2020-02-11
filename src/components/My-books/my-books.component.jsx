@@ -16,40 +16,48 @@ class MyBooks extends Component {
   render() {
     const { books, currentUser, deleteBook } = this.props;
 
+    /* if (books[0] === undefined) {
+      return (
+        <div className='list-container'>
+          <h2>My Books</h2>
+          <AddBook />
+          <h1 className='no-book-placeholder'>
+            No books present in the shelf...
+          </h1>
+        </div>
+      );
+    } */
+
     const books_th = books.map(book => {
-      if (book.userID === currentUser.uid) {
-        return (
-          <tr key={book.id} className='rows'>
-            <th className='cover-book'>
-              <img
-                src={
-                  book.volumeInfo.imageLinks.smallThumbnail
-                    ? book.volumeInfo.imageLinks.smallThumbnail
-                    : noImage
-                }
-                alt='book cover'
-              />
-            </th>
-            <th className='title'>
-              <Link to={`/my-books/${book.id}`}>{book.volumeInfo.title} </Link>
-            </th>
-            <th>{book.volumeInfo.authors}</th>
-            <th className='actions-row' id={book.id}>
-              <button
-                onClick={() => {
-                  deleteBook(book.id);
-                }}>
-                <i className='far fa-trash-alt'></i>
-              </button>
-            </th>
-          </tr>
-        );
-      } else {
-        return null;
-      }
+      return (
+        <tr key={book.id} className='rows'>
+          <th className='cover-book'>
+            <img
+              src={
+                book.volumeInfo.imageLinks.smallThumbnail
+                  ? book.volumeInfo.imageLinks.smallThumbnail
+                  : noImage
+              }
+              alt='book cover'
+            />
+          </th>
+          <th className='title'>
+            <Link to={`/my-books/${book.id}`}>{book.volumeInfo.title} </Link>
+          </th>
+          <th>{book.volumeInfo.authors}</th>
+          <th className='actions-row' id={book.id}>
+            <button
+              onClick={() => {
+                deleteBook(book.id);
+              }}>
+              <i className='far fa-trash-alt'></i>
+            </button>
+          </th>
+        </tr>
+      );
     });
 
-    const deleteConfirm = bookID => {
+    /*  const deleteConfirm = bookID => {
       deleteBook(bookID);
       console.log(bookID);
       if (window.confirm(`Are you sure?`)) {
@@ -57,15 +65,13 @@ class MyBooks extends Component {
       } else {
         return;
       }
-    };
+    }; */
 
     return (
       <div>
         <div className='list-container'>
           <h2>My Books</h2>
-          <ErrorBoundary>
-            <AddBook />
-          </ErrorBoundary>
+          <AddBook />
           <table>
             <tbody>
               <tr className='table-title'>
@@ -85,7 +91,7 @@ class MyBooks extends Component {
 
 const mapStateToProps = state => {
   return {
-    books: state.firestore.ordered.books || state.books.books,
+    books: state.shelf.books,
     currentUser: state.firebase.auth
   };
 };
@@ -97,10 +103,13 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default compose(
-  connect(mapStateToProps, mapDispatchToProps),
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  ) /* ,
   firestoreConnect([
     {
       collection: 'books'
     }
-  ])
+  ]) */
 )(MyBooks);

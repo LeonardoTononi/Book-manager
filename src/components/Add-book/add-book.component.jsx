@@ -109,7 +109,6 @@ class AddBook extends Component {
         {inputIsActive ? (
           <div className='search-list'>
             {books.map(book => {
-              console.log(book.volumeInfo.imageLinks);
               return (
                 <div
                   className='book'
@@ -117,11 +116,7 @@ class AddBook extends Component {
                   onClick={this.handleData}
                   data-id={book.id}>
                   <div className='book-col' data-id={book.id}>
-                    <img
-                      data-id={book.id}
-                      src={book.volumeInfo.imageLinks.smallThumbnail}
-                      alt='book cover'
-                    />
+                    <img data-id={book.id} src={noImage} alt='book cover' />
                   </div>
                   <div className='book-col' data-id={book.id}>
                     <h4 data-id={book.id}>{book.volumeInfo.title}</h4>
@@ -138,6 +133,7 @@ class AddBook extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log('STATE REDUX: ', state);
   return {
     auth: state.firebase.auth
   };
