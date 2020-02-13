@@ -1,4 +1,4 @@
-## A book manager built with React.
+## A book manager built with React. 2019
 You can register and then login to the application, store your books and add some info about it.
 The informations about books are retrived with the google books api.
 
