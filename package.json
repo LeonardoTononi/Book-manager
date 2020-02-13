@@ -2,7 +2,7 @@
   "name": "book-manager",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://easaaa.github.io/Book-manager/",
+  "homepage": "/",
   "dependencies": {
     "axios": "^0.19.0",
     "eslint-utils": "^1.4.2",
