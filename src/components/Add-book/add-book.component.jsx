@@ -133,7 +133,6 @@ class AddBook extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log('STATE REDUX: ', state);
   return {
     auth: state.firebase.auth
   };
