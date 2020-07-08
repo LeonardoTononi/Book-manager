@@ -1,0 +1,85 @@
+.book-details {
+  padding: 20px;
+  margin: 100px auto;
+  max-width: 500px;
+  width: 100%;
+  -webkit-box-shadow: 0 0 0px 9px #03314b;
+          box-shadow: 0 0 0px 9px #03314b;
+}
+
+.book-details .close-window i {
+  padding: 4px 6px;
+  border-radius: 50%;
+  background: #03314b;
+  color: white;
+}
+
+.book-details h1 {
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #042330;
+  position: relative;
+  text-align: start;
+  margin-bottom: 80px;
+}
+
+.book-details h1:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  width: 200px;
+  height: 5px;
+  background: #2ce080;
+}
+
+.book-details .amazon-btn {
+  max-width: 120px;
+  margin: 40px auto;
+}
+
+.book-details .amazon-btn button {
+  background: #ffd05a;
+  border-radius: 4px;
+  border: none;
+}
+
+.book-details .amazon-btn button:hover {
+  background: #f0c14b;
+}
+
+.book-details .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  place-content: center;
+  place-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.book-details .grid i {
+  padding: 5px;
+  background: #2ce080;
+  color: white;
+  border-radius: 5px;
+}
+
+.book-details .grid img {
+  width: 150px;
+  border: 1px solid black;
+}
+
+.book-details .grid .details {
+  display: -ms-grid;
+  display: grid;
+  place-items: start;
+}
+
+.book-details .grid .details h2 {
+  font-weight: 400;
+}
+/*# sourceMappingURL=book-details.style.css.map */
