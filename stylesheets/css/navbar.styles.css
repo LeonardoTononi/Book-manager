@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Mansalva&display=swap");
 .container-nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9,16 +8,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 12px 5%;
-  background: #03314b;
-  color: #fff;
-  -webkit-box-shadow: 0 0 10px -2px #808080d4;
-          box-shadow: 0 0 10px -2px #808080d4;
-}
-
-.container-nav a {
-  text-decoration: none;
-  color: #fff;
+  padding: 30px 5%;
+  background: black;
+  color: white;
+  -webkit-box-shadow: 0 0 10px 2px #808080d4;
+          box-shadow: 0 0 10px 2px #808080d4;
 }
 
 .container-nav .logo {
@@ -26,22 +20,20 @@
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
       align-self: start;
+  text-transform: uppercase;
   margin: 0;
   font-weight: 400;
   font-size: 1.5rem;
   padding: 10px 15px;
-  color: white;
-  font-family: "Mansalva", cursive;
-  font-size: 2rem;
 }
 
 .container-nav .navbar {
+  margin: 0;
+  color: white;
+  font-size: 1.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
-  color: #fff;
-  font-size: 1.2rem;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -49,14 +41,19 @@
 
 .container-nav .navbar li {
   list-style: none;
-  padding: 10px 13px;
+  padding: 10px 15px;
   cursor: pointer;
   -webkit-transition: background 200ms ease-in;
   transition: background 200ms ease-in;
 }
 
 .container-nav .navbar li:hover {
-  background: #044063;
+  background: white;
+  color: black;
+}
+
+.container-nav .navbar li:hover a {
+  color: black;
 }
 
 .container-nav .navbar li a {
@@ -66,31 +63,5 @@
 
 .container-nav .log-div {
   display: inherit;
-  padding: 0 10px;
-  cursor: pointer;
-  font-size: 1.2rem;
-  -webkit-transition: background 200ms ease-in;
-  transition: background 200ms ease-in;
-}
-
-.container-nav .log-div:hover {
-  background: #044063;
-}
-
-.container-nav .log-div a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.container-nav .hamburger {
-  padding: 13px 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-.container-nav .hamburger i {
-  color: #fff;
-  font-size: 1.5rem;
 }
 /*# sourceMappingURL=navbar.styles.css.map */

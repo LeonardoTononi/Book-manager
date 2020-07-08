@@ -34,6 +34,7 @@
   }
 
   table {
+    box-shadow: 0 0 0px 7px #c1c1c16b;
     border-collapse: collapse;
   }
 
@@ -47,8 +48,6 @@
   }
 
   .table-title {
-    padding: 5rem 0;
-
     th {
       box-sizing: border-box;
       border: 4px solid white;

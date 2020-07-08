@@ -1,16 +1,5 @@
-::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 7px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-}
-
 .add-book-container {
-  padding: 5rem 0 7rem 0;
+  padding: 40px 0;
   max-width: 400px;
 
   h2 {
@@ -33,10 +22,10 @@
   }
 
   button {
-    width: 120px;
+    width: 100px;
     font-size: 1rem;
+    height: 30px;
     margin: 0;
-    box-sizing: border-box;
   }
 
   form {
@@ -93,7 +82,7 @@
     }
 
     input {
-      padding: 1rem;
+      padding: 2px;
       outline: none;
       font-size: 1rem;
       height: 30px;

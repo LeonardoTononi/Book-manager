@@ -1,23 +1,18 @@
 .custom-button {
   padding: 7px 5px;
   margin-top: 10px;
-  background: #2ce080;
-  color: white;
-  border: 1px solid #2ce080;
+  background: white;
+  color: black;
+  border: 1px solid black;
   font-size: 1rem;
-  font-weight: 500;
   cursor: pointer;
   width: 100%;
   outline: none;
-  -webkit-transition: -webkit-transform 100ms ease-in;
-  transition: -webkit-transform 100ms ease-in;
-  transition: transform 100ms ease-in;
-  transition: transform 100ms ease-in, -webkit-transform 100ms ease-in;
 }
 
 .custom-button:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  background: black;
+  color: white;
 }
 
 .google-sign-in {

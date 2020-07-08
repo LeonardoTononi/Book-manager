@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,YAAY,CAAC;EACX,KAAK,EAAE,GAAG;CACX",
+    "mappings": "",
     "sources": [
         "../../src/components/Sign-in/sign-in.styles.scss"
     ],

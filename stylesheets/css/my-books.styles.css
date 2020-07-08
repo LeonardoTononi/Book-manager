@@ -1,129 +1,39 @@
 .list-container {
-  padding: 20px 80px;
+  padding: 20px;
   margin: 0 auto;
-  max-width: 1500px;
+  max-width: 1200px;
   width: 100%;
 }
 
 .list-container h2 {
-  padding: 10px;
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.25;
-  color: #042330;
-  position: relative;
-  text-align: start;
-  margin: 0;
-}
-
-.list-container h2:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 10px;
-  width: 100px;
-  height: 5px;
-  background: #2ce080;
-}
-
-.list-container h2 :last-of-type:after {
-  content: "";
-  width: 0;
-  height: 0;
+  font-weight: 400;
+  text-align: center;
+  padding-left: 5px;
 }
 
 .list-container table {
-  border-collapse: collapse;
-}
-
-.list-container .title {
-  text-transform: uppercase;
-}
-
-.list-container .title i {
-  color: #042330;
-  font-size: 0.9rem;
-}
-
-.list-container .table-title {
-  padding: 5rem 0;
+  margin: 0 auto;
 }
 
 .list-container .table-title th {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 4px solid white;
-  font-weight: 700;
-  color: #042330;
+  font-weight: 400;
+  background-color: #484848;
+  color: white;
   padding: 10px;
-  font-size: 1.5rem;
-  position: relative;
-  width: 250px;
-}
-
-.list-container .table-title th:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 10px;
-  width: 80px;
-  height: 5px;
-  background: #042330;
-}
-
-.list-container th:first-of-type:after {
-  width: 0;
-  height: 0;
-}
-
-.list-container th:last-of-type:after {
-  width: 0;
-  height: 0;
-}
-
-.list-container .rows {
-  -webkit-transition: background 150ms ease-in-out;
-  transition: background 150ms ease-in-out;
-  padding: 10px;
-}
-
-.list-container .rows .cover-book img {
-  width: 50px;
-  -webkit-transition: -webkit-transform 100ms ease-in;
-  transition: -webkit-transform 100ms ease-in;
-  transition: transform 100ms ease-in;
-  transition: transform 100ms ease-in, -webkit-transform 100ms ease-in;
-}
-
-.list-container .rows:hover {
-  background: whitesmoke;
-  font-weight: 700;
-}
-
-.list-container .rows:hover button {
-  background-color: transparent;
-}
-
-.list-container .rows:hover .title i {
-  color: #fff;
-}
-
-.list-container .rows:hover .cover-book img {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
 }
 
 .list-container th {
-  padding: 20px 30px 20px 15px;
-  text-align: start;
-  font-weight: 400;
+  padding: 10px;
+  text-align: center;
+  font-weight: 100;
   width: 150px;
-  color: #042330;
-  font-size: 1.2rem;
 }
 
 .list-container th button {
-  background-color: transparent;
+  background-color: white;
   border: none;
   padding: 4px 7px;
   color: #484848;
@@ -131,13 +41,9 @@
   outline: none;
 }
 
-.list-container th a {
-  color: #042330;
-  text-decoration: none;
-}
-
-.list-container th i {
-  background-color: transparent;
-  font-size: 1rem;
+.list-container .actions-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=my-books.styles.css.map */
